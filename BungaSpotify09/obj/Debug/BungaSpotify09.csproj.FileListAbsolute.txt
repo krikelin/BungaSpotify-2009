@@ -1,0 +1,16 @@
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\BungaSpotify09.exe.config
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.csprojResolveAssemblyReference.cache
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Form1.resources
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Properties.Resources.resources
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.csproj.GenerateResource.Cache
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\BungaSpotify09.exe
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\BungaSpotify09.pdb
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\SpiderView.exe
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\Newtonsoft.Json.dll
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\DotLiquid.dll
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\SpiderView.pdb
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.exe
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.pdb
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Apps.whatsnew.resources
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\lua51.dll
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Apps.playqueue.resources

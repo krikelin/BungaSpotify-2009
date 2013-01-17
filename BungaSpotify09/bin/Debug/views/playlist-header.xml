@@ -1,0 +1,18 @@
+<?
+-- Resource file for playlist app.
+?><document>
+	<section id="overview" title="Overview">
+		<hbox height="120" width="100%">
+			<vbox>
+				<text>${playlist.name}</text>
+				<text>${playlist.description}</text>
+			</vbox>
+		</hbox>
+		%-- playlist grid, resizes dynamically
+		<grid cols="title,artist,duration,album" 
+			uri="${playlist.uri}"
+			reorder="${playlist.canReorder}" 
+			delete="${playlist.canDelete}" 
+			add="${playlist.canAdd}" />
+	</section>
+</document>

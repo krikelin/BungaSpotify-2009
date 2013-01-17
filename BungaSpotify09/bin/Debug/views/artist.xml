@@ -1,0 +1,46 @@
+%-- Artist view
+<?
+-- Shows an album
+function show_album(album)
+?>	
+	<hbox flex="1" width="100%">
+		<img width="64" height="64" src="${album.image}" />
+		<vbox width="100%">
+			<link uri="${album.uri}">${album.name}</link>
+			<playlist columns="no,title,duration" src="${album.uri}" />
+		</vbox>
+	</hbox>
+<?
+end
+?>
+<document>
+	<section id="overview" title="Overview">
+		%--- Present additional data if exists
+		% if artist.extra do
+		<hbox height="320">
+			<img src="${artist.image}" width="320" height="320" />
+			<text width="320" height="320">${artist.biography}</text>
+			<vbox height="320" flex="1"> 
+				<text>Related artists</text>
+				% for rel_artist in artist.related_artists do
+				<link uri="${rel_artist}">${rel_artist.name}</link>
+				% end
+			</vbox>
+		</hbox>
+		% end
+		
+		%-- Show albums and singles
+		
+		% if artist.albums do
+		<hbox style="divider"><text>Albums</text></hbox>
+		% for album in album.singles
+		% show_album(album)
+		% end
+		% if artist.singles do
+		<hbox style="divider"><text>Singles</text></hbox>
+		% for single in artist.singles
+		% show_album(single)
+		% end
+		
+	</section>
+</document>
