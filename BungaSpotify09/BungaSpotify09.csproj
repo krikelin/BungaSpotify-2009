@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apps\artist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Apps\playqueue.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -64,6 +67,9 @@
     <Compile Include="SearchBox.Designer.cs">
       <DependentUpon>SearchBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Apps\artist.resx">
+      <DependentUpon>artist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apps\playqueue.resx">
       <DependentUpon>playqueue.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +89,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SearchBox.resx">
+      <DependentUpon>SearchBox.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\searchbox.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

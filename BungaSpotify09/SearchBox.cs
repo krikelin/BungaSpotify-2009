@@ -16,5 +16,26 @@ namespace BungaSpotify09
         {
             InitializeComponent();
         }
+        public event EventHandler SearchClicked;
+        private void SearchBox_Click(object sender, EventArgs e)
+        {
+            if (SearchClicked != null)
+                SearchClicked(sender, e);
+        }
+        public String Text
+        {
+            get
+            {
+                return this.textBox1.Text;
+            }
+            set
+            {
+                this.textBox1.Text = value;
+            }
+        }
+        private void SearchBox_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

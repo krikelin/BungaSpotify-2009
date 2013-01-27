@@ -21,24 +21,27 @@ namespace BungaSpotify09
             InitializeComponent();
         }
 
+        SPListView listView;
         public Style Stylesheet = new PixelStyle();
         private void Form1_Load(object sender, EventArgs e)
         {
             SpiderHost = new Spider.SpiderHost();
             SpiderHost.RegistredAppTypes.Add("whatsnew", typeof(Apps.whatsnew));
             SpiderHost.RegistredAppTypes.Add("playqueue", typeof(Apps.playqueue));
+            SpiderHost.RegistredAppTypes.Add("artist", typeof(Apps.artist));
             tmrReload = new System.Windows.Forms.Timer();
-
+            listView = new SPListView(this.Stylesheet);
             this.Controls.Add(SpiderHost);
             SpiderHost.Dock = DockStyle.Fill;
-            SPListView listView = new SPListView(this.Stylesheet);
             this.Controls.Add(listView);
             listView.AddItem("What's new", new Uri("spotify:whatsnew"));
             listView.AddItem("Play Queue", new Uri("spotify:playqueue"));
             listView.AddItem("-", new Uri("spotify:playqueue"));
             listView.AddItem("Searches", new Uri("spotify:searches"));
             listView.AddItem("-", new Uri("spotify:playqueue"));
-            listView.AddItem("+ New Playlist", new Uri("spotify:searches"));
+            listView.AddItem("Firewall", new Uri("spotify:artist:52IeOOKrZIYwqPkRgjNFQl"));
+            listView.AddItem("-", new Uri("spotify:playqueue"));
+            listView.AddItem("+ New Playlist", new Uri("spotify:playlist:add"));
             listView.ItemSelected += listView_ItemSelected;
             listView.Dock = DockStyle.Left;
             listView.Width = 270;
@@ -55,11 +58,28 @@ namespace BungaSpotify09
             this.Controls.Add(panel);
 
             this.Controls.Add(panel2);
-
+            searchBox = new SearchBox();
+            panel.Controls.Add(searchBox);
+            searchBox.Left = 80;
+            searchBox.Top = 20;
+            searchBox.SearchClicked += searchBox_SearchClicked;
+            
             // add some playlists
             
         }
 
+        void searchBox_SearchClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Navigate(new Uri(searchBox.Text));
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        SearchBox searchBox;
         void listView_ItemSelected(object Sender, SPListView.SPListItemEventArgs e)
         {
             Navigate(e.Item.Uri);
@@ -71,6 +91,19 @@ namespace BungaSpotify09
             {
                 SpiderHost.Navigate(uri.ToString());
             }
+            foreach (SPListItem item in this.listView.Items)
+            {
+
+                if (item.Uri.ToString() == uri.ToString())
+                {
+                    item.Selected = true;
+                }
+                else
+                {
+                    item.Selected = false;
+                }
+            }
+            listView.Draw(listView.CreateGraphics());
         }
 
     }

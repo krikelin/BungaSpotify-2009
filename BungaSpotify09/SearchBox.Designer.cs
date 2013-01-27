@@ -28,10 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(32, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(177, 13);
+            this.textBox1.TabIndex = 0;
+            // 
+            // SearchBox
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::BungaSpotify09.Properties.Resources.searchbox;
+            this.Controls.Add(this.textBox1);
+            this.Name = "SearchBox";
+            this.Size = new System.Drawing.Size(239, 21);
+            this.Load += new System.EventHandler(this.SearchBox_Load);
+            this.Click += new System.EventHandler(this.SearchBox_Click);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

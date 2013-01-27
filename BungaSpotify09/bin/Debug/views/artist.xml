@@ -1,46 +1,74 @@
-%-- Artist view
 <?
--- Shows an album
-function show_album(album)
-?>	
-	<hbox flex="1" width="100%">
-		<img width="64" height="64" src="${album.image}" />
-		<vbox width="100%">
-			<link uri="${album.uri}">${album.name}</link>
-			<playlist columns="no,title,duration" src="${album.uri}" />
-		</vbox>
-	</hbox>
-<?
-end
+#include('views/core-functions.xml'); 
+if artist then
+else
+	artist = {
+		image = "https://d2c87l0yth4zbw.cloudfront.net/u/wp/hack-300x300.jpg",
+		uri = "",
+		extra = true,
+		biography = "Lorem Ipsum",
+		related_artists = {},
+		singles = {
+			{
+				name = "Sincere",
+				uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni",
+				image = "https://d2c87l0yth4zbw.cloudfront.net/u/wp/hack-300x300.jpg",
+				tracks = {
+					{
+						name = "Sincere - Lange Mix",
+						popularity = 0.2,
+						uri = "spotify:track:7bYn5BfAhFaHrLxDA38lDN",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					}
+				}
+			}
+		}
+	}
+end 
 ?>
 <document>
 	<section id="overview" title="Overview">
-		%--- Present additional data if exists
-		% if artist.extra do
-		<hbox height="320">
-			<img src="${artist.image}" width="320" height="320" />
-			<text width="320" height="320">${artist.biography}</text>
-			<vbox height="320" flex="1"> 
+		<hbox padding="12,12,12,12" height="128">
+			<img src="${artist.image}" width="128" height="128" />
+			<text flex="1" width="120" height="120">${artist.biography}</text>
+			<box height="180" flex="1"> 
 				<text>Related artists</text>
-				% for rel_artist in artist.related_artists do
+				% for i, rel_artist in ipairs(artist.related_artists) do
 				<link uri="${rel_artist}">${rel_artist.name}</link>
 				% end
-			</vbox>
+			</box>
 		</hbox>
-		% end
 		
 		%-- Show albums and singles
 		
-		% if artist.albums do
-		<hbox style="divider"><text>Albums</text></hbox>
-		% for album in album.singles
-		% show_album(album)
-		% end
-		% if artist.singles do
-		<hbox style="divider"><text>Singles</text></hbox>
-		% for single in artist.singles
-		% show_album(single)
-		% end
+		% if artist.albums then
+		<hbox bgcolor="#888888" height="20" width="100%"><text>Albums</text></hbox>
 		
+		% for i, album in ipairs(artist.albums) do
+		% make_album(album)
+		% end
+		% end
+		% if artist.singles then
+		<hbox style="divider"><text>Singles</text></hbox>
+		
+		% for i, single in ipairs(artist.singles) do
+		% make_album(single)
+		% end
+		% end
 	</section>
 </document>

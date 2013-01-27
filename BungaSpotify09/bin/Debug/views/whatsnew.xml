@@ -1,40 +1,83 @@
+<?
+#include('views/core-functions.xml')
+-- Example
+
+if suggested_artists then
+else
+	suggested_artists = {
+		{
+			uri = "spotify:artist:2FOROU2Fdxew72QmueWSUy",
+			name = "Dr. Sounds",
+			image = "https://lh5.googleusercontent.com/-RH9GFSfHiKA/AAAAAAAAAAI/AAAAAAAAAAA/8addaH0mszI/s96-c/photo.jpg"
+		},
+		{
+			uri = "spotify:artist:2FOROU2Fdxew72QmueWSUy",
+			name = "Body Surf",
+			image = "https://lh5.googleusercontent.com/-RH9GFSfHiKA/AAAAAAAAAAI/AAAAAAAAAAA/8addaH0mszI/s96-c/photo.jpg"
+		},
+		{
+			uri = "spotify:artist:2FOROU2Fdxew72QmueWSUy",
+			name = "Desirégo",
+			image = "https://lh5.googleusercontent.com/-RH9GFSfHiKA/AAAAAAAAAAI/AAAAAAAAAAA/8addaH0mszI/s96-c/photo.jpg"
+		}
+	}
+end
+if album then
+else
+	album = {
+		name = "Test",
+		image = "https://lh5.googleusercontent.com/-RH9GFSfHiKA/AAAAAAAAAAI/AAAAAAAAAAA/8addaH0mszI/s96-c/photo.jpg",
+		tracks = {
+			{
+				name = "test",
+				uri = "spotify:track:3NZN6JScFFSgyWPxnWaEYb",
+				artist_uri = "spotify:track:3NZN6JScFFSgyWPxnWaEYb"
+			}
+		}
+	}
+end
+?>
 <document xmlns="http://segurify.net/TR/2011">
 	<section padding="12,12,12,12" title="What's new" id="overview">
 			
-			<vbox height="320" width="100%">
-				<track uri="spotify:track:1Hm1e7VMs1CmqzhjOLEci1" 
-					title="In and Out of Love" 
-					artist_uri="spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
-					artist="Armin Van Buuren"
-					album="In and out of Love"
-					album_uri="spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5" />
+			<box height="320" width="100%">
+				
 				<text size="12" fgcolor="#88ff88">What's new</text>
 				% if news then
 				% for item in news do
 				<hbox width="100%" height="64px">
 					<img width="64" height="64" uri="${item.uri}" src="${item.picture}" />
 					<vbox flex="1">
-						<link uri="${item.uri}" text="${item.title}" />
+						<link uri="${item.uri}">${item.title}</link>
 						<text>${item.description}</text>
 					</vbox>
 				</hbox>
 				% end	
 				% else
 				<text>No news found</text>
+				
 				% end
-			</vbox>
-			<text padding="12,12,12,12" style="font-size: 15" fgcolor="#ffaaff">Artists you might like</text>
-			<hbox bgcolor="#AAAAAA">
-				% if suggested_artist then
-				% for artist in suggested_artist do
-				<vbox>
-					<link uri="${artist.uri}">${artist.name}</link>
-				</vbox>
-				% end
-				% else
-				<text fgcolor="#ffffff">No relatead artists found</text>
-				% end
-			</hbox>
+				<text  style="font-size: 15" fgcolor="#ffaaff">Artists you might like</text>
+				<box bgcolor="#444444" padding="12,12,12,12" height="120">
+					% if suggested_artists then
+					<hbox width="100%">
+					% for i, artist in ipairs(suggested_artists) do
+						<hbox width="320">
+							<img width="64" height="64" src="${artist.image}" />
+							<box>
+								<link uri="${artist.uri}">${artist.name}</link>
+								<link fgcolor="#888888">80s</link>
+								<link fgcolor="#888888">80s</link>
+							</box>
+						</hbox>
+					% end
+					</hbox>
+					% else
+					<text fgcolor="#ffffff">No relatead artists found</text>
+					% end
+				</box>
+			</box>
+			
 			
 	</section>
 	<section id="toplist" title="Top List">
