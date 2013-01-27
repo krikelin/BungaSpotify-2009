@@ -1,0 +1,50 @@
+<?
+#include('views/generic-header.xml');
+if album then
+else
+	album = {
+
+		artist = {
+			name = "Firewall",
+			uri = "spotify:artist:52IeOOKrZIYwqPkRgjNFQl"
+		},
+		name = "Sincere",
+		uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni",
+		image = "https://d2c87l0yth4zbw.cloudfront.net/u/wp/hack-300x300.jpg",
+		tracks = {
+			{
+				name = "Sincere - Lange Mix",
+				popularity = 0.2,
+				uri = "spotify:track:7bYn5BfAhFaHrLxDA38lDN",
+				no = 1,
+				artists = {
+					name = "Firewall",
+					uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+				}
+			},
+			{
+				name = "Sincere - Pulser Mix",
+				
+				popularity = 0.2,
+				uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+				no = 1,
+				artists = {
+					name = "Firewall",
+					uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+				}
+			}
+		}
+		
+		
+	}
+end 
+?>
+<document xmlns="http://segurify.net/TR/2011">
+	<section id="overview" title="Overview">
+		% make_album(album)
+		
+		% if album.review then
+		<box bgcolor="#FFFFEE" padding="120,120,120,120" margin="12,12,12,12"><text>${album.review}</text></box>
+		% end
+	</section>
+</document>

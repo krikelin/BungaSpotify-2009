@@ -16,3 +16,4 @@ D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\l
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Apps.playqueue.resources
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.SearchBox.resources
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Apps.artist.resources
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Apps.album.resources

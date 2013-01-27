@@ -1,0 +1,22 @@
+<?
+function make_album (album)
+?>
+<hbox minHeight="130" padding="12,12,12,12">
+	<vbox width="128">
+	<img src="${album.image}" width="128" height="108" uri="${album.uri}" />
+	<box flex="1"><text></text></box>
+	</vbox>
+	<playlist>
+		<link uri="${album.uri}">${album.name}</link>
+		% for i, track in ipairs(album.tracks) do
+		<track 	uri="${track.uri}" 
+				name="${track.name}" />
+		% end
+		% if album.copyright then
+		<text>${album.copyright}</text>
+		% end
+	</playlist>
+</hbox>
+<?
+end
+?>

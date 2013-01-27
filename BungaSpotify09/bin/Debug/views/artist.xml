@@ -1,5 +1,5 @@
 <?
-#include('views/core-functions.xml'); 
+#include('views/generic-header.xml'); 
 if artist then
 else
 	artist = {
@@ -18,6 +18,195 @@ else
 						name = "Sincere - Lange Mix",
 						popularity = 0.2,
 						uri = "spotify:track:7bYn5BfAhFaHrLxDA38lDN",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					}
+				}
+			},{
+				name = "Sincere",
+				uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni",
+				image = "https://d2c87l0yth4zbw.cloudfront.net/u/wp/hack-300x300.jpg",
+				tracks = {
+					{
+						name = "Sincere - Lange Mix",
+						popularity = 0.2,
+						uri = "spotify:track:7bYn5BfAhFaHrLxDA38lDN",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					}
+				}
+			}
+		},
+		albums = {
+			{
+				name = "Sincere",
+				uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni",
+				image = "https://d2c87l0yth4zbw.cloudfront.net/u/wp/hack-300x300.jpg",
+				tracks = {
+					{
+						name = "Sincere - Lange Mix",
+						popularity = 0.2,
+						uri = "spotify:track:7bYn5BfAhFaHrLxDA38lDN",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
+						no = 1,
+						artists = {
+							name = "Firewall",
+							uri = "spotify:album:4SsaZg5kfxFYbbjEr5kJni"
+						}
+					},
+					{
+						name = "Sincere - Pulser Mix",
+						
+						popularity = 0.2,
+						uri = "spotify:track:4DfB1lemvov998wHj9XxgF",
 						no = 1,
 						artists = {
 							name = "Firewall",
@@ -64,7 +253,7 @@ end
 		% end
 		% end
 		% if artist.singles then
-		<hbox style="divider"><text>Singles</text></hbox>
+		<hbox bgcolor="#888888" width="100%" height="20"><text>Singles</text></hbox>
 		
 		% for i, single in ipairs(artist.singles) do
 		% make_album(single)
