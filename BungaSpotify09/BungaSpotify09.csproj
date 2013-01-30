@@ -53,7 +53,13 @@
     <Compile Include="Apps\app.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Apps\playlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Apps\playqueue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Apps\search.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Apps\Whatsnew.cs">
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apps\playqueue.resx">
       <DependentUpon>playqueue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apps\search.resx">
+      <DependentUpon>search.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apps\Whatsnew.resx">
       <DependentUpon>Whatsnew.cs</DependentUpon>

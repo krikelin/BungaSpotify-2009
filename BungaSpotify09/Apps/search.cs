@@ -8,25 +8,26 @@ using System.Threading.Tasks;
 
 namespace BungaSpotify09.Apps
 {
-    class artist : Spider.App
+    public class search : Spider.App
     {
         
         private void InitializeComponent()
         {
             this.SuspendLayout();
             // 
-            // artist
+            // search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.Name = "artist";
+            this.Name = "search";
+            this.Size = new System.Drawing.Size(147, 150);
             this.Load += new System.EventHandler(this.artist_Load);
             this.ResumeLayout(false);
-           
+
         }
-        public artist(SpiderHost host, String[] arguments)
+        public search(SpiderHost host, String[] arguments)
             : base(host, arguments)
         {
-            Template = "views\\artist.xml";
+            Template = "views\\search.xml";
             InitializeComponent();
             Start();
         }
@@ -35,12 +36,33 @@ namespace BungaSpotify09.Apps
             String[] parameters = (String[])arguments;
             Thread.Sleep(100);
             return new {
-                artist = new {
-                    name = "Armin Van Buuren",
-                    image = "http://o.scdn.co/300/e7cd6c28d836bf81f8a0623615e759f6c3c8fbd2",
-                    
-                    biography = "A progressive trance DJ like Klaus",
-                    uri = String.Join(":", parameters),
+                
+                search = new {
+                    artists = new Object[] {
+                        new {
+                            name = "Armin Van Buuren",
+                            uri = "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+                        }
+                    },
+                    tracks = new Object[] {
+                        new {
+                            no = 1,
+                            name = "In and Out of Love",
+                            uri = "spotify:track:1Hm1e7VMs1CmqzhjOLEci1",
+                            artists = new Object[] {
+                                new {
+                                    name = "Armin Van Buuren",
+                                    uri = "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+                                }
+                            },
+                            album = new Object[] {
+                                new {
+                                    name = "In and out of Love",
+                                    uri = "spotify:album:7znjtUTvvmRO54knNZEUx5"
+                                }
+                            }
+                        }
+                    },
                     albums = new Object[] {
                         new {
                             title = "In and Out of Love",
@@ -57,33 +79,7 @@ namespace BungaSpotify09.Apps
                                             uri = "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
                                         }
                                     },
-                                    album = new Object[]  {
-                                        new {
-                                            name = "In and out of Love",
-                                            uri = "spotify:album:7znjtUTvvmRO54knNZEUx5"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    singles = new Object[] {
-                        new {
-                            title = "In and Out of Love",
-                            uri = "spotify:album:7znjtUTvvmRO54knNZEUx5",
-                            image = "http://o.scdn.co/300/3d05a8c867cf10deaa92d5dd13359c575d5e744d",
-                            tracks = new Object[] {
-                                new {
-                                    no = 1,
-                                    name = "In and Out of Love",
-                                    uri = "spotify:track:1Hm1e7VMs1CmqzhjOLEci1",
-                                    artists = new Object[] {
-                                        new {
-                                            name = "Armin Van Buuren",
-                                            uri = "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
-                                        }
-                                    },
-                                    album = new Object[]  {
+                                    album = new Object[] {
                                         new {
                                             name = "In and out of Love",
                                             uri = "spotify:album:7znjtUTvvmRO54knNZEUx5"
@@ -104,3 +100,5 @@ namespace BungaSpotify09.Apps
         }
     }
 }
+
+

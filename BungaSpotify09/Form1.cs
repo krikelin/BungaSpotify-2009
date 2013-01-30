@@ -30,6 +30,8 @@ namespace BungaSpotify09
             SpiderHost.RegistredAppTypes.Add("playqueue", typeof(Apps.playqueue));
             SpiderHost.RegistredAppTypes.Add("artist", typeof(Apps.artist));
             SpiderHost.RegistredAppTypes.Add("album", typeof(Apps.album));
+            SpiderHost.RegistredAppTypes.Add("search", typeof(Apps.search));
+            SpiderHost.RegistredAppTypes.Add("user", typeof(Apps.playlist));
             tmrReload = new System.Windows.Forms.Timer();
             listView = new SPListView(this.Stylesheet);
             this.Controls.Add(SpiderHost);
@@ -73,7 +75,14 @@ namespace BungaSpotify09
         {
             try
             {
-                Navigate(new Uri(searchBox.Text));
+                if (searchBox.Text.StartsWith("spotify:"))
+                {
+                    Navigate(new Uri(searchBox.Text));
+                }
+                else
+                {
+                    SpiderHost.Navigate("spotify:search:" + searchBox.Text.ToString());
+                }
             }
             catch (Exception ex)
             {
@@ -92,6 +101,7 @@ namespace BungaSpotify09
             {
                 SpiderHost.Navigate(uri.ToString());
             }
+            
             foreach (SPListItem item in this.listView.Items)
             {
 

@@ -7,13 +7,13 @@ function make_album (album, size)
 	<box flex="1"><text></text></box>
 	</vbox>
 	<playlist>
-		<link uri="${album.uri}">${album.name}</link>
+		<link uri="${album.uri}" height="10">${album.name}</link>
 		% for track in enum(album.tracks) do
 		<track 	uri="${track.uri}" 
 				name="${track.name}" />
 		% end
 		% if album.copyright then
-		<text>${album.copyright}</text>
+		<text fontSize="8" fgcolor="#4a4a4a">${album.copyright}</text>
 		% end
 	</playlist>
 </hbox>

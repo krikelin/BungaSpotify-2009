@@ -1,12 +1,13 @@
 <view xmlns="http://segurify.net/TR/2011">
 	<section bgcolor="#ffffff" fgcolor="#000000" id="a" title="Error">
 		<box padding="12,12,12,12">
-			<text fgcolor="#ff2200">Parse error in template application</text>
+			<text fontSize="21" bold="true" italic="true" fgcolor="#ff2200">Parse error in template application</text>
+			<hr/>
 			<text>An error occured at the request of the operation</text>
-			<text>Stack trace</text>
-			<box padding="15,15,15,15" bgcolor="#FFFFEE">
-				<text fgcolor="#333333">${error}</text>
-			</box>
+			<text fgcolor="#444444">Stack trace</text>
+			<vbox padding="3,3,3,3" height="5" bgcolor="#FFFF88">
+				<text>${error}</text>
+			</vbox>
 		</box>
 	</section>
 </view>

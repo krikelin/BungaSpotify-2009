@@ -33,7 +33,7 @@ namespace BungaSpotify09.Apps
         {
             Thread.Sleep(1000);
             var album = new {
-                uri = String.Join(":", arguments),
+                uri = String.Join(":", (String[])arguments),
                 artist = new {
                     name = "Armin Van Buuren",
                     uri = "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
@@ -53,7 +53,7 @@ namespace BungaSpotify09.Apps
                 }
             };
 
-            return album;
+            return new { album = album };
         }
         private void artist_Load(object sender, EventArgs e)
         {

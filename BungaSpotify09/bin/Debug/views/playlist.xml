@@ -1,0 +1,32 @@
+<?
+#include('views/generic-header.xml'); 
+-- Resource file for playlist app.
+
+?><document xmlns="http://segurify.net/TR/2011">
+	<section id="overview" title="Playlist">
+		<box width="100%">
+			<box bgcolor="#222222" padding="12,12,12,12" height="120" width="100%">
+				
+					<text width="100%" height="20" fgcolor="#FFFFFF">${data.playlist.name}</text>
+					<text fgcolor="#888888">${data.playlist.description}</text>
+			
+			</box>
+			<!-- playlist grid, resizes dynamically -->
+			<playlist
+				reorder="${data.playlist.permissions.Reorder}" 
+				delete="${data.playlist.permissions.delete}" 
+				add="${data.playlist.permissions.add}">
+				<columnheader columnheaders="title,artist,duration,album" />
+				% for track in enum(data.playlist.tracks) do
+					<track 
+					uri="${track.uri}"
+					artist_uri="spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+					artist="Armin van Buuren"
+					album_uri="spotify:album:7znjtUTvvmRO54knNZEUx5"
+					album="In and out of Love"
+					name="${track.name}" />
+				% end
+			</playlist>
+		</box>
+	</section>
+</document>

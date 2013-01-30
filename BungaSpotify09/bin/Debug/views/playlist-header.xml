@@ -1,13 +1,13 @@
-<?
+ <?
 -- Resource file for playlist app.
 ?><document>
 	<section id="overview" title="Overview">
-		<hbox height="120" width="100%">
+		<box height="120" width="100%">
 			<vbox>
 				<text>${playlist.name}</text>
 				<text>${playlist.description}</text>
 			</vbox>
-		</hbox>
+		</box>
 		%-- playlist grid, resizes dynamically
 		<grid cols="title,artist,duration,album" 
 			uri="${playlist.uri}"
