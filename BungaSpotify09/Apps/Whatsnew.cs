@@ -22,7 +22,9 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
 
         }
-        public whatsnew(SpiderHost host) : base(host){
+        public whatsnew(SpiderHost host, String[] arguments)
+            : base(host, arguments)
+        {
             InitializeComponent();
         }
         private void whatsnew_Load(object sender, EventArgs e)

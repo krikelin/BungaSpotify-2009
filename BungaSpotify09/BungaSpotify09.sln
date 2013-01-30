@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BungaSpotify09", "BungaSpot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiderView", "..\..\SpiderView\SpiderView\SpiderView.csproj", "{38767D2D-14D8-4744-9A60-779315B279FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBTest", "..\PBTest\PBTest.csproj", "{4E176783-786B-47CC-8E4C-8D49668EFB3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{38767D2D-14D8-4744-9A60-779315B279FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38767D2D-14D8-4744-9A60-779315B279FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38767D2D-14D8-4744-9A60-779315B279FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E176783-786B-47CC-8E4C-8D49668EFB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E176783-786B-47CC-8E4C-8D49668EFB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E176783-786B-47CC-8E4C-8D49668EFB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E176783-786B-47CC-8E4C-8D49668EFB3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

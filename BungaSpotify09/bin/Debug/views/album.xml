@@ -1,8 +1,8 @@
 <?
 #include('views/generic-header.xml');
-if album then
+if data then
 else
-	album = {
+	data.album = {
 
 		artist = {
 			name = "Firewall",
@@ -41,10 +41,10 @@ end
 ?>
 <document xmlns="http://segurify.net/TR/2011">
 	<section id="overview" title="Overview">
-		% make_album(album)
+		% make_album(data.album, 192)
 		
-		% if album.review then
-		<box bgcolor="#FFFFEE" padding="120,120,120,120" margin="12,12,12,12"><text>${album.review}</text></box>
+		% if data.album.review then
+		<box bgcolor="#FFFFEE" padding="120,120,120,120" margin="12,12,12,12"><text>${data.album.review}</text></box>
 		% end
 	</section>
 </document>

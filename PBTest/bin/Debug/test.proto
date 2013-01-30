@@ -1,0 +1,4 @@
+message Love {
+	uint name;
+	string t;
+}

@@ -1,0 +1,10 @@
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\PBTest.exe.config
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.csprojResolveAssemblyReference.cache
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\PBTest.exe
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\PBTest.pdb
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\SpiderView.exe
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\Newtonsoft.Json.dll
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\DotLiquid.dll
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\SpiderView.pdb
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.exe
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.pdb

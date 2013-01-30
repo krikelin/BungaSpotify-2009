@@ -50,6 +50,9 @@
     <Compile Include="Apps\album.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Apps\app.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Apps\playqueue.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apps\album.resx">
       <DependentUpon>album.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apps\app.resx">
+      <DependentUpon>app.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apps\playqueue.resx">
       <DependentUpon>playqueue.cs</DependentUpon>

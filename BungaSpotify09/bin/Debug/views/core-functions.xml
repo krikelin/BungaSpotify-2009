@@ -1,15 +1,16 @@
 <?
-function make_album (album)
+function make_album (album, size)
 ?>
 <hbox padding="12,12,12,12">
 	<vbox width="128">
-	<img src="${album.image}" width="128" height="128" />
+	<img src="${album.image}" width="${size}" height="${size}" />
 	</vbox>
 	<playlist>
 		<text>${album.name}</text>
 		% for i, track in ipairs(album.tracks) do
 		<track uri="${track.uri}" 
-			title="${track.name}" 
+			name="${track.name}" 
+			
 			 />
 		% end
 	</playlist>

@@ -22,7 +22,9 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
 
         }
-        public playqueue (SpiderHost host) : base(host) {
+        public playqueue(SpiderHost host, String[] arguments)
+            : base(host, arguments)
+        {
             InitializeComponent();
         }
         private void playqueue_Load(object sender, EventArgs e)
