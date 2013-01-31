@@ -16,6 +16,7 @@ function make_album (album, size)
 		% end
 	</playlist>
 </hbox>
+<hr />
 <?
 
 end
