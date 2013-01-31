@@ -36,9 +36,9 @@ namespace BungaSpotify09.Apps
            
 
             String[] parameters = (String[])arguments;
-            Form1 form1 = (Form1)Tag;
-            IMusicService service = form1.MusicService;
-            Artist artist = form1.MusicService.LoadArtist(parameters[2]);
+         
+            IMusicService service = this.Host.MusicService;
+            Artist artist = service.LoadArtist(parameters[2]);
 
             // Load all releases
             artist.LoadReleases();

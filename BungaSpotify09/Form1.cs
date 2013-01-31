@@ -15,25 +15,21 @@ namespace BungaSpotify09
 {
     public partial class Form1 : Form
     {
-        Dictionary<String, IMusicService> Services { get; set; }
-        public IMusicService MusicService { get; set; }
         private Spider.SpiderHost SpiderHost;
         private Timer tmrReload;
         public Form1()
         {
             InitializeComponent();
-            this.Services = new Dictionary<string, IMusicService>();
-            this.MusicService = new Spider.Media.DummyService();
         }
+
+       
 
         SPListView listView;
         public Style Stylesheet = new PixelStyle();
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Services = new Dictionary<string, IMusicService>();
-            this.MusicService = new Spider.Media.DummyService();
-            SpiderHost = new Spider.SpiderHost();
-            SpiderHost.Form = this;
+            
+            SpiderHost = new Spider.SpiderHost(new DummyService());
             SpiderHost.RegistredAppTypes.Add("whatsnew", typeof(Apps.whatsnew));
             SpiderHost.RegistredAppTypes.Add("playqueue", typeof(Apps.playqueue));
             SpiderHost.RegistredAppTypes.Add("artist", typeof(Apps.artist));

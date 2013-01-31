@@ -20,16 +20,22 @@ namespace BungaSpotify09.Apps
             this.Name = "whatsnew";
             this.Load += new System.EventHandler(this.whatsnew_Load);
             this.ResumeLayout(false);
-
+            Template = "views\\whatsnew.xml";
         }
         public whatsnew(SpiderHost host, String[] arguments)
             : base(host, arguments)
         {
             InitializeComponent();
+            Start();
         }
+        public override object Loading(object arguments)
+        {
+            return base.Loading(arguments);
+        }
+       
         private void whatsnew_Load(object sender, EventArgs e)
         {
-            this.Spider.LoadFile("views\\whatsnew.xml");
+            
             
         }
     }

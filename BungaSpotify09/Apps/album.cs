@@ -1,4 +1,5 @@
 ﻿using Spider;
+using Spider.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,29 +32,15 @@ namespace BungaSpotify09.Apps
         }
         public override object Loading(object arguments)
         {
-            Thread.Sleep(1000);
-            var album = new {
-                uri = String.Join(":", (String[])arguments),
-                artist = new {
-                    name = "Armin Van Buuren",
-                    uri = "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
-                },
-                name = "In and Out of Love",
-                tracks = new Object[] {
-                    new {
-                        uri = "spotify:track:1Hm1e7VMs1CmqzhjOLEci1",
-                        name = "In and Out of Love - Radio Edit",
-                        artists = new Object[] {
-                            new {
-                                name = "Armin Van Buuren",
-                                uri = "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
-                            }
-                        }
-                    }
-                }
+            IMusicService ms = this.Host.MusicService;
+            String[] parameters = (String[])arguments;
+            Release release = ms.LoadRelease(parameters[2]);
+            release.LoadTracks();
+            return new
+            {
+                Release = release
             };
 
-            return new { album = album };
         }
         private void artist_Load(object sender, EventArgs e)
         {

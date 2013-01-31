@@ -7,7 +7,7 @@ end
 <document>
 	<section id="overview" title="Overview">
 		<hbox padding="12,12,12,12" height="202">
-			<img src="${data.artist.image}" width="192" height="192" />
+			<img src="${data.Artist.Image}" width="192" height="192" />
 		
 			<box height="180" flex="1"> 
 				<text>Related artists</text>
