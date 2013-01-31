@@ -1,4 +1,5 @@
 ﻿using Spider;
+using Spider.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,33 @@ namespace BungaSpotify09.Apps
             Start();
         }
         public override object Loading(object arguments)
-        {
+        {  
+           
+
             String[] parameters = (String[])arguments;
+            Form1 form1 = (Form1)Tag;
+            IMusicService service = form1.MusicService;
+            Artist artist = form1.MusicService.LoadArtist(parameters[2]);
+
+            // Load all releases
+            artist.LoadReleases();
+            
+            // Load tracklist for all releases
+            foreach(Release release in artist.Albums) 
+            {
+                release.LoadTracks();
+            }
+            // Load tracklist for all releases
+            foreach (Release release in artist.Singles)
+            {
+                release.LoadTracks();
+            }
+            return new
+            {
+                Artist = artist
+            };
+                
+#if(False)
             Thread.Sleep(100);
             return new {
                 artist = new {
@@ -95,6 +121,8 @@ namespace BungaSpotify09.Apps
                     }
                 }
             };
+#endif
+
 
         }
 

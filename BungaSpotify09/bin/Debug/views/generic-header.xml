@@ -3,17 +3,17 @@ function make_album (album, size)
 ?>
 <hbox minHeight="202" padding="12,12,12,12">
 	<vbox width="${size}">
-	<img src="${album.image}" width="${size}" height="${size}" uri="${album.uri}" />
+	<img src="${album.Image}" width="${size}" height="${size}" uri="${album.Uri}" />
 	<box flex="1"><text></text></box>
 	</vbox>
 	<playlist>
-		<link uri="${album.uri}" height="10">${album.name}</link>
-		% for track in enum(album.tracks) do
+		<link uri="${album.Uri}" height="10">${album.Name}</link>
+		% for track in enum(album.Tracks) do
 		<track 	uri="${track.uri}" 
 				name="${track.name}" />
 		% end
-		% if album.copyright then
-		<text fontSize="8" fgcolor="#4a4a4a">${album.copyright}</text>
+		% if album.Copyright then
+		<text fontSize="8" fgcolor="#4a4a4a">${album.Copyright}</text>
 		% end
 	</playlist>
 </hbox>
