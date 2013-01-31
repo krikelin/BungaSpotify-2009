@@ -1,7 +1,7 @@
 <?
 function make_album (album, size)
 ?>
-<hbox minHeight="202" padding="12,12,12,12">
+<hbox minHeight="${size}" padding="12,12,12,12">
 	<vbox width="${size}">
 	<img src="${album.Image}" width="${size}" height="${size}" uri="${album.Uri}" />
 	<box flex="1"><text></text></box>

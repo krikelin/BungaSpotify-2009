@@ -41,7 +41,7 @@ end
 ?>
 <document xmlns="http://segurify.net/TR/2011">
 	<section id="overview" title="Overview">
-		% make_album(data.Release, 192)
+		% make_album(data.Release, 250)
 		<!--
 		% if data.album.review then
 		<box bgcolor="#FFFFEE" padding="120,120,120,120" margin="12,12,12,12"><text>${data.album.review}</text></box>

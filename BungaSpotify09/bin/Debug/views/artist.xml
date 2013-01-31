@@ -6,8 +6,8 @@ end
 ?>
 <document>
 	<section id="overview" title="Overview">
-		<hbox padding="12,12,12,12" height="202">
-			<img src="${data.Artist.Image}" width="192" height="192" />
+		<hbox padding="12,12,12,12" height="252">
+			<img src="${data.Artist.Image}" width="250" height="250" />
 		
 			<box height="180" flex="1"> 
 				<text>Related artists</text>
@@ -18,14 +18,14 @@ end
 		%-- Show albums and singles
 		
 		% if data.Artist.Albums then
-		<hbox bgcolor="#888888" height="20" width="100%"><text>Albums</text></hbox>
+		<hbox bgcolor="#616161" height="20" width="100%"><text>Albums</text></hbox>
 		
 		% for album in enum(data.Artist.Albums) do
-		% make_album(album, 192)
+		% make_album(album, 250)
 		% end
 		% end
 		% if data.Artist.Singles then
-		<hbox bgcolor="#888888" width="100%" height="20"><text>Singles</text></hbox>
+		<hbox bgcolor="#616161" width="100%" height="20"><text>Singles</text></hbox>
 		
 		% for single in enum(data.Artist.Singles) do
 		% make_album(single, 192)

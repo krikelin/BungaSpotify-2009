@@ -3,43 +3,39 @@
 
 ?>
 <view xmlns="http://segurify.net/TR/2011">
-	<section id="search" title="Search">
-		<box width="100%">
-			<!-- <hbox height="100" width="100%">
-				% if data.search.artists then
-				<box>
-					<label>Artists</label>
-					
-					% for artist in enum(data.search.artists) do
-					<link uri="${artist.uri}">${artist.name}</link>
-					% end
-					
-				</box>
+	<section id="search" title="Search">´
+		<hbox height="100" width="100%">
+			% if data.search.artists then
+			<box>
+				<label>Artists</label>
+				
+				% for artist in enum(data.search.artists) do
+				<link uri="${artist.uri}">${artist.name}</link>
 				% end
-				% if data.search.albums then
-				<box>
-					<label>Albums</label>
-					
-					% for album in enum(data.search.albums) do
-					<link uri="${album.uri}">${album.name}</link>
-					% end
-					
-				</box>
+				
+			</box>
+			% end
+			% if data.search.albums then
+			<box>
+				<label>Albums</label>
+				
+				% for album in enum(data.search.albums) do
+				<link uri="${album.uri}">${album.name}</link>
 				% end
-			</hbox> -->
-			<playlist width="100%" columnheaders="title,artist,duration,album" flex="1">
-				% if data.search.tracks then
-				% for track in enum(data.search.tracks) do
-				<track 
-					uri="${track.uri}"
-					artist_uri="spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
-					artist="Armin van Buuren"
-					album_uri="spotify:album:7znjtUTvvmRO54knNZEUx5"
-					album="In and out of Love"
-					name="${track.name}" />
-				% end
-				% end
-			</playlist>
-		</box>
+				
+			</box>
+			% end
+		</hbox>
+		<playlist width="100%" columnheaders="title,artist,duration,album" flex="1">
+			<columnheader />
+			% if data.search.tracks then
+			% for track in enum(data.search.tracks) do
+			% for i=1, 200 do
+			<track 
+				uri="${track.uri}" />
+			% end
+			% end
+			% end
+		</playlist>
 	</section>
 </view>
