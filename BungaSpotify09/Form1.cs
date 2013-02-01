@@ -46,7 +46,8 @@ namespace BungaSpotify09
             listView.AddItem("-", new Uri("spotify:playqueue"));
             listView.AddItem("Searches", new Uri("spotify:searches"));
             listView.AddItem("-", new Uri("spotify:playqueue"));
-            listView.AddItem("Firewall", new Uri("spotify:artist:52IeOOKrZIYwqPkRgjNFQl"));
+            listView.AddItem("Dr. Sounds", new Uri("spotify:artist:2FOROU2Fdxew72QmueWSUy"));
+            listView.AddItem("Body Surf", new Uri("spotify:artist:12PPH919k5uHlRewv1ykBy"));
             listView.AddItem("-", new Uri("spotify:playqueue"));
             listView.AddItem("+ New Playlist", new Uri("spotify:playlist:add"));
             listView.ItemSelected += listView_ItemSelected;

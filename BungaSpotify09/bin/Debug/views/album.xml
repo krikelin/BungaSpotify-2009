@@ -40,7 +40,20 @@ else
 end 
 ?>
 <document xmlns="http://segurify.net/TR/2011">
-	<section id="overview" title="Overview">
+	<section padding="12,12,12,12" id="overview" title="Overview">
+		
+		% if data.Release.RealStatus == 0 then
+		% else
+		<box padding="1,1,1,1" bgcolor="#443333">
+			<text fgcolor="#ff5555">This release is not available</text>
+		</box>
+		% end
+		% if data.Release.RealStatus == 5 then
+		
+		<box padding="1,1,1,1" bgcolor="#444433">
+			<text fgcolor="#ffff55">This release contains bad karma and is therefore disabled from listening</text>
+		</box>
+		% end
 		% make_album(data.Release, 250)
 		<!--
 		% if data.album.review then
