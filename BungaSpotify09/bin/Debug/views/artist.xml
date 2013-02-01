@@ -6,16 +6,15 @@ end
 ?>
 <document>
 	<section id="overview" title="Overview">
-		% if data.Artist.Extras then
-	<!--	<hbox padding="12,12,12,12" height="252">
-			<img src="${data.Artist.Image}" width="250" height="250" />
+		<hbox padding="12,12,12,12" height="252">
+			<img src="${data.Artist.Image}" width="200" height="200" />
 		
 			<box height="180" flex="1"> 
 				<text>Related artists</text>
 				
 			</box>
-		</hbox>-->
-		% end
+		</hbox>
+		<hbox height="1"></hbox>
 		%-- Show albums and singles
 		
 		% if data.Artist.Albums then

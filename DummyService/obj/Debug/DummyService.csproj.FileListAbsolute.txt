@@ -1,0 +1,5 @@
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\bin\Debug\DummyService.dll
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\bin\Debug\DummyService.pdb
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\obj\Debug\DummyService.csprojResolveAssemblyReference.cache
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\obj\Debug\DummyService.dll
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\obj\Debug\DummyService.pdb

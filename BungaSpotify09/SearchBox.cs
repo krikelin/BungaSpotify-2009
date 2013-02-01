@@ -19,8 +19,7 @@ namespace BungaSpotify09
         public event EventHandler SearchClicked;
         private void SearchBox_Click(object sender, EventArgs e)
         {
-            if (SearchClicked != null)
-                SearchClicked(sender, e);
+            
         }
         public String Text
         {
@@ -41,6 +40,13 @@ namespace BungaSpotify09
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SearchBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.X > this.Width - 24)
+            if (SearchClicked != null)
+                SearchClicked(sender, e);
         }
     }
 }

@@ -51,6 +51,7 @@
             this.Size = new System.Drawing.Size(239, 21);
             this.Load += new System.EventHandler(this.SearchBox_Load);
             this.Click += new System.EventHandler(this.SearchBox_Click);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SearchBox_MouseClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 

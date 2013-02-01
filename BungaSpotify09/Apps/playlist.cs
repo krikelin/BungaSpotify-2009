@@ -1,4 +1,5 @@
 ﻿using Spider;
+using Spider.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,52 +24,36 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
 
         }
+        public Playlist Playlist;
         public playlist(SpiderHost host, String[] arguments)
             : base(host, arguments)
         {
             Template = "views\\playlist.xml";
+           
             InitializeComponent();
             Start();
+        }
+        public override void Reorder(int oldPos, int count, int newPos)
+        {
+            
         }
         public override object Loading(object arguments)
         {
             String[] parameters = (String[])arguments;
-            Thread.Sleep(100);
-            return new {
-                playlist = new {
-                    permissions= new {
-                        reorder = "true",
-                        add = "true",
-                        remove = "true"
-                    },
-                    uri=String.Join(":", arguments),
-                    name="My playlist",
-                    user = new {
-                        uri = "spotify:user:drsounds",
-                        name = "dr. sounds"
-                    },
-                    tracks = new Object[] {
-                        new {
-                            no = 1,
-                            name = "In and Out of Love",
-                            uri = "spotify:track:1Hm1e7VMs1CmqzhjOLEci1",
-                            artists = new Object[] {
-                                new {
-                                    name = "Armin Van Buuren",
-                                    uri = "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
-                                }
-                            },
-                            album = new Object[] {
-                                new {
-                                    name = "In and out of Love",
-                                    uri = "spotify:album:7znjtUTvvmRO54knNZEUx5"
-                                }
-                            }
-                        }
-                    }
-                }
+            Playlist playlist = this.Host.MusicService.LoadPlaylist(parameters[2], parameters[4]);
+            this.Playlist = playlist;
+            playlist.Tracks = this.Host.MusicService.GetPlaylistTracks(playlist, 0);
+            return new
+            
+            {
+                Playlist = playlist
             };
+            
 
+        }
+        public override string GetName()
+        {
+            return this.Playlist.Name;
         }
 
         private void artist_Load(object sender, EventArgs e)

@@ -32,7 +32,10 @@ namespace BungaSpotify09.Apps
         {
             return base.Loading(arguments);
         }
-       
+        public override string GetName()
+        {
+            return "What's New";
+        }
         private void whatsnew_Load(object sender, EventArgs e)
         {
             

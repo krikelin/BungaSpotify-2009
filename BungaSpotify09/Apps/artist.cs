@@ -31,6 +31,11 @@ namespace BungaSpotify09.Apps
             InitializeComponent();
             Start();
         }
+        public override string GetName()
+        {
+            return Artist.Name;
+        }
+        public Artist Artist;
         public override object Loading(object arguments)
         {  
            
@@ -39,7 +44,7 @@ namespace BungaSpotify09.Apps
          
             IMusicService service = this.Host.MusicService;
             Artist artist = service.LoadArtist(parameters[2]);
-
+            this.Artist = artist;
             // Load all releases
             artist.LoadReleases();
             

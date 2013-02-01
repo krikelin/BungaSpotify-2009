@@ -5,35 +5,32 @@
 <view xmlns="http://segurify.net/TR/2011">
 	<section id="search" title="Search">´
 		<hbox height="100" width="100%">
-			% if data.search.artists then
-			<box>
-				<label>Artists</label>
+			
+			<vbox height="100">
+				<text>Artists</text>
 				
-				% for artist in enum(data.search.artists) do
+				% for artist in enum(data.Search.Artists) do
 				<link uri="${artist.uri}">${artist.name}</link>
 				% end
 				
-			</box>
-			% end
-			% if data.search.albums then
-			<box>
-				<label>Albums</label>
+			</vbox>
+			<vbox height="100">
+				<text>Albums</text>
 				
-				% for album in enum(data.search.albums) do
-				<link uri="${album.uri}">${album.name}</link>
+				% for album in enum(data.Search.Albums) do
+				<link uri="${album.uri}">${album.Name}</link>
 				% end
 				
-			</box>
-			% end
+			</vbox>
 		</hbox>
 		<playlist width="100%" columnheaders="title,artist,duration,album" flex="1">
 			<columnheader />
-			% if data.search.tracks then
-			% for track in enum(data.search.tracks) do
-			% for i=1, 200 do
+			% if data.Search.Tracks then
+			% for track in enum(data.Search.Tracks) do
+		
 			<track 
-				uri="${track.uri}" />
-			% end
+				uri="${track.Uri}" />
+			
 			% end
 			% end
 		</playlist>
