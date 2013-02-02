@@ -35,6 +35,14 @@ namespace BungaSpotify09.Apps
             InitializeComponent();
             Start();
         }
+        public override void DropItem(IDataObject data)
+        {
+            
+        }
+        public override bool AllowsDrop(IDataObject data)
+        {
+            return true;
+        }
         public override void Reorder(int oldPos, int count, int newPos)
         {
             

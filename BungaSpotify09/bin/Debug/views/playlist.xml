@@ -3,7 +3,7 @@
 -- Resource file for playlist app.
 
 ?><document xmlns="http://segurify.net/TR/2011">
-	<section id="overview" title="Playlist" playlist="true">
+	<section id="overview" height="60" title="Playlist" playlist="true">
 		<box bgcolor="#222222" padding="12,12,12,12" height="120" width="100%">
 				% if data then
 				<text width="100%" height="20" fgcolor="#FFFFFF">${data.Playlist.Name}</text>
