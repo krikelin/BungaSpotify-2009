@@ -36,7 +36,7 @@ namespace BungaSpotify09
             SpiderHost.RegistredAppTypes.Add("artist", typeof(Apps.artist));
             SpiderHost.RegistredAppTypes.Add("album", typeof(Apps.album));
             SpiderHost.RegistredAppTypes.Add("search", typeof(Apps.search));
-            SpiderHost.RegistredAppTypes.Add("user", typeof(Apps.playlist));
+            SpiderHost.RegistredAppTypes.Add("user", typeof(Apps.user));
             tmrReload = new System.Windows.Forms.Timer();
             listView = new SPListView(this.Stylesheet, SpiderHost);
             this.Controls.Add(SpiderHost);

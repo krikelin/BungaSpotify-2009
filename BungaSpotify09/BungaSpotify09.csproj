@@ -63,7 +63,7 @@
     <Compile Include="Apps\internal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Apps\playlist.cs">
+    <Compile Include="Apps\user.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Apps\playqueue.cs">

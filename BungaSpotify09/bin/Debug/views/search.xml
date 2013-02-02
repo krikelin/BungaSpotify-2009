@@ -3,11 +3,11 @@
 
 ?>
 <view xmlns="http://segurify.net/TR/2011">
-	<section id="search" title="Search">´
+	<section height="100" id="search" title="Search">´
 		<hbox height="100" width="100%">
 			
 			<vbox height="100">
-				<text>Artists</text>
+				<text>Artists (0)</text>
 				
 				% for artist in enum(data.Search.Artists) do
 				<link uri="${artist.uri}">${artist.name}</link>
@@ -15,7 +15,7 @@
 				
 			</vbox>
 			<vbox height="100">
-				<text>Albums</text>
+				<text>Albums (0)</text>
 				
 				% for album in enum(data.Search.Albums) do
 				<link uri="${album.uri}">${album.Name}</link>
@@ -23,16 +23,6 @@
 				
 			</vbox>
 		</hbox>
-		<playlist width="100%" columnheaders="title,artist,duration,album" flex="1">
-			<columnheader />
-			% if data.Search.Tracks then
-			% for track in enum(data.Search.Tracks) do
 		
-			<track 
-				uri="${track.Uri}" />
-			
-			% end
-			% end
-		</playlist>
 	</section>
 </view>

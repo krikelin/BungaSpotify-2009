@@ -45,13 +45,32 @@ namespace BungaSpotify09.Apps
             };
         }
         private String query;
+        public override void LoadFinished()
+        {
+            base.LoadFinished();
+            
+            var listView = this.Spider.Sections["search"].ListView;
+            listView.AllowsReoreder = false;
+            listView.AllowDrop = false;
+            foreach (Track t in this.res.Tracks)
+            {
+                Spider.CListView.CListViewItem item = new CListView.CListViewItem(t.Name);
+                item.Track = t;
+                item.Spawn = listView;
+                t.Item = item;
+                listView.Items.Add(t.Item);
+            }
+        }
+        SearchResult res;
         public override object Loading(object arguments)
         {
+            this.Spider.IsPlaylist = true;
+            
             String[] parameters = (String[])arguments;
 
-            this.query = parameters[3];
+            this.query = parameters[2];
             IMusicService service = this.Host.MusicService;
-            SearchResult res = service.Find(parameters[2], 12, 1);
+            res = service.Find(parameters[2], 12, 1);
             
             return new
             {
