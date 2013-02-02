@@ -127,4 +127,46 @@
   <data name="searchbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\searchbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ic_album_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_album_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_album_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_album_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_artist_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_artist_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_artist_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_artist_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_playlist_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_playlist_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_playlist_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_playlist_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_home_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_home_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_home_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_home_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_playqueue_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_playqueue_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_playqueue_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_playqueue_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_search_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_search_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_search_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_search_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_toplist_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_toplist_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_toplist_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_toplist_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

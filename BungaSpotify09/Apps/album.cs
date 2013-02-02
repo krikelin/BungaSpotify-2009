@@ -30,11 +30,12 @@ namespace BungaSpotify09.Apps
             InitializeComponent();
             Start();
         }
+        Release release;
         public override object Loading(object arguments)
         {
             IMusicService ms = this.Host.MusicService;
             String[] parameters = (String[])arguments;
-            Release release = ms.LoadRelease(parameters[2]);
+            release = ms.LoadRelease(parameters[2]);
             release.LoadTracks();
             return new
             {
@@ -42,9 +43,25 @@ namespace BungaSpotify09.Apps
             };
 
         }
+        public override string GetName()
+        {
+            return release.Name;
+        }
         private void artist_Load(object sender, EventArgs e)
         {
             
+        }
+        public override string GetSubName()
+        {
+            return "by " +release.Artist.Name;
+        }
+        public override SPListItem.ListIcon GetIcon()
+        {
+            return new SPListItem.ListIcon()
+            {
+                Normal = Properties.Resources.ic_album_normal,
+                Selected = Properties.Resources.ic_album_selected
+            };
         }
     }
 }

@@ -5,7 +5,7 @@
 			
 			<hr/>
 			<text italic="true" fontSize="18" bold="true" fgcolor="#880000">An error occured at the request of the operation</text>
-			<text fgcolor="#444444" bold="true">Error information</text>
+			<text fgcolor="#000000" fontSize="10" bold="true">Error information</text>
 			<vbox padding="3,3,3,3" height="5" bgcolor="#FFFF88">
 				<text>${error}</text>
 			</vbox>

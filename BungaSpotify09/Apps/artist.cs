@@ -62,6 +62,7 @@ namespace BungaSpotify09.Apps
             {
                 Artist = artist
             };
+            
                 
 #if(False)
             Thread.Sleep(100);
@@ -130,7 +131,14 @@ namespace BungaSpotify09.Apps
 
 
         }
-
+        public override SPListItem.ListIcon GetIcon()
+        {
+            return new SPListItem.ListIcon()
+            {
+                Normal = Properties.Resources.ic_artist_normal,
+                Selected = Properties.Resources.ic_artist_selected
+            };
+        }
         private void artist_Load(object sender, EventArgs e)
         {
 

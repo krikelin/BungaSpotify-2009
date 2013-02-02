@@ -7,7 +7,7 @@ function make_album (album, size)
 	<box flex="1"><text></text></box>
 	</vbox>
 	<playlist>
-		<link uri="${album.Uri}" height="20">${album.Name}</link>
+		<link uri="${album.Uri}" height="20">${album.Name} (${album.Year})</link>
 		% for track in enum(album.Tracks) do
 		<track 	uri="${track.Uri}" />
 		% end
@@ -16,7 +16,6 @@ function make_album (album, size)
 		% end
 	</playlist>
 </hbox>
-<hr />
 <?
 
 end

@@ -22,13 +22,17 @@ end
 		
 		% for album in enum(data.Artist.Albums) do
 		% make_album(album, 250)
+<hr />
 		% end
 		% end
 		% if data.Artist.Singles then
 		<hbox bgcolor="#616161" width="100%" height="20"><text>Singles</text></hbox>
 		
 		% for single in enum(data.Artist.Singles) do
-		% make_album(single, 192)
+		% make_album(single, 250)
+		
+		
+<hr />
 		% end
 		% end
 	</section>

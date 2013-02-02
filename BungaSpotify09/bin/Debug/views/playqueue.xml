@@ -1,7 +1,21 @@
  <document xmlns="http://segurify.net/TR/2011">
-	<section padding="12,12,12,12" title="Overview" id="overview">
-		
-			
+	<section padding="12,12,12,12" title="Play Queue" id="overview">
+		<playlist>
+			<columnheaders>
+				%-- for track in enum(data.Playqueue.Queue) do
+				<track uri="${track.Uri}" />
+				%-- end
+			</columnheaders>
+		</playlist>
+	</section>
+	<section padding="12,12,12,12" title="History" id="overview">
+		<playlist>
+			<columnheaders>
+				%-- for track in enum(data.Playqueue.History) do
+				<track uri="${track.Uri}" />
+				%-- end
+			</columnheaders>
+		</playlist>
 	</section>
 </document>
 			

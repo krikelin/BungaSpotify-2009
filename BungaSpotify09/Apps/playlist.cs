@@ -2,6 +2,7 @@
 using Spider.Media;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -55,7 +56,14 @@ namespace BungaSpotify09.Apps
         {
             return this.Playlist.Name;
         }
-
+        public override Spider.SPListItem.ListIcon GetIcon()
+        {
+            return new SPListItem.ListIcon()
+            {
+                Normal = Properties.Resources.ic_playlist_normal,
+                Selected = Properties.Resources.ic_playlist_selected
+            };
+        }
         private void artist_Load(object sender, EventArgs e)
         {
 

@@ -1,4 +1,5 @@
-﻿using Spider;
+﻿using BungaSpotify.Service;
+using Spider;
 using Spider.Media;
 using Spider.Skinning;
 using System;
@@ -30,7 +31,7 @@ namespace BungaSpotify09
         {
             
             SpiderHost = new Spider.SpiderHost(new DummyService());
-            SpiderHost.RegistredAppTypes.Add("whatsnew", typeof(Apps.whatsnew));
+            SpiderHost.RegistredAppTypes.Add("internal", typeof(Apps.@internal));
             SpiderHost.RegistredAppTypes.Add("playqueue", typeof(Apps.playqueue));
             SpiderHost.RegistredAppTypes.Add("artist", typeof(Apps.artist));
             SpiderHost.RegistredAppTypes.Add("album", typeof(Apps.album));
@@ -41,19 +42,16 @@ namespace BungaSpotify09
             this.Controls.Add(SpiderHost);
             SpiderHost.Dock = DockStyle.Fill;
             this.Controls.Add(listView);
-            listView.AddItem(new Uri("spotify:whatsnew:a"));
-            listView.AddItem(new Uri("spotify:playqueue:a"));
-            listView.AddItem("-", new Uri("spotify:playqueue:A"));
-            listView.AddItem(new Uri("spotify:search:test"));
-            listView.AddItem("-", new Uri("spotify:playqueue"));
-            listView.AddItem(new Uri("spotify:artist:2FOROU2Fdxew72QmueWSUy"));
+            listView.AddItem(new Uri("spotify:internal:whatsnew"));
+            listView.AddItem(new Uri("spotify:internal:toplist"));
+            listView.AddItem(new Uri("spotify:internal:playqueue"));
+            listView.AddItem("-", new Uri("spotify:internal:toplist"));
+            listView.AddItem(new Uri("spotify:album:4St6b2FQD128IfMBExb1uS"));
             listView.AddItem(new Uri("spotify:artist:12PPH919k5uHlRewv1ykBy"));
-            listView.AddItem(new Uri("spotify:playqueue"));
             listView.AddItem(new Uri("spotify:user:drsounds:playlist:test"));
             listView.ItemSelected += listView_ItemSelected;
             listView.Dock = DockStyle.Left;
             listView.Width = 270;
-            SpiderHost.Navigate("spotify:whatsnew:a");
 
             var panel = new Panel();
             panel.BackgroundImage = Properties.Resources.header;
