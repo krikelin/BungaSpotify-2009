@@ -42,12 +42,12 @@ namespace BungaSpotify09
             this.Controls.Add(SpiderHost);
             SpiderHost.Dock = DockStyle.Fill;
             this.Controls.Add(listView);
-            /*listView.AddItem(new Uri("spotify:internal:whatsnew"));
+            listView.AddItem(new Uri("spotify:internal:whatsnew"));
             listView.AddItem(new Uri("spotify:internal:toplist"));
             listView.AddItem(new Uri("spotify:internal:playqueue"));
             listView.AddItem("-", new Uri("spotify:internal:toplist"));
             listView.AddItem(new Uri("spotify:album:4St6b2FQD128IfMBExb1uS"));
-            listView.AddItem(new Uri("spotify:artist:12PPH919k5uHlRewv1ykBy"));*/
+            listView.AddItem(new Uri("spotify:artist:12PPH919k5uHlRewv1ykBy"));
             listView.AddItem(new Uri("spotify:user:drsounds:playlist:test"));
             listView.ItemSelected += listView_ItemSelected;
             listView.Dock = DockStyle.Left;

@@ -2,11 +2,7 @@
 #include('views/generic-header.xml'); 
 
 ?><view xmlns="http://segurify.net/TR/2011">
-	<section id="toplist" title="Top List">
-		<playlist>
-			% for track in enum(data.TopList.TopTracks) do
-			<track uri="${track.uri}" />
-			% end
-		</playlist>
+	<section playlist="true" height="0" id="toplist" title="Top List">
+		
 	</section>
 </view>

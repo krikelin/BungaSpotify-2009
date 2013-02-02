@@ -30,6 +30,31 @@ namespace BungaSpotify09.Apps
             Template = "views\\" + arguments[2] + ".xml";
             Start();
         }
+        public override void LoadFinished()
+        {
+            switch ((string)((string[])Arguments)[2])
+            {
+                case "whatsnew":
+                    {
+                    }
+                    break;
+                case "toplist":
+                    {
+                        foreach(Track t in ((TopList)currentResource).TopTracks) {
+                            Spider.CListView.CListViewItem item = new Spider.CListView.CListViewItem("");
+                            item.Track = t;
+                            this.Spider.Sections["toplist"].ListView.Items.Add(item);
+                        }
+                        
+                    }
+                    break;
+                case "Play Queue":
+                    {
+                        
+                    }
+                   break;
+            }
+        }
         Resource currentResource;
         public override object Loading(object arguments)
         {
