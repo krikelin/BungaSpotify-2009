@@ -411,10 +411,10 @@ namespace BungaSpotify.Service
         {
             return true;
         }
-        public PlaylistTrack MakeUserTrackFromString(String row)
+        public Track MakeUserTrackFromString(String row)
         {
             String[] parts = row.Split(':');
-            PlaylistTrack track = new PlaylistTrack(this, parts[2], parts[4]);
+            Track track = new Track(this,  parts[4]);
             return track;
         }
         public TrackCollection GetPlaylistTracks(Playlist playlist, int revision)
@@ -425,7 +425,7 @@ namespace BungaSpotify.Service
             TrackCollection tc = new TrackCollection(this, playlist, new List<Track>());
             foreach (String strtrack in tracks)
             {
-                PlaylistTrack pt = MakeUserTrackFromString(strtrack);
+                Track pt = MakeUserTrackFromString(strtrack);
                 tc.Add((Track)pt);
             }
             return tc;

@@ -3,22 +3,14 @@
 -- Resource file for playlist app.
 
 ?><document xmlns="http://segurify.net/TR/2011">
-	<section id="overview" title="Playlist">
+	<section id="overview" title="Playlist" playlist="true">
 		<box bgcolor="#222222" padding="12,12,12,12" height="120" width="100%">
-			
+				% if data then
 				<text width="100%" height="20" fgcolor="#FFFFFF">${data.Playlist.Name}</text>
-				<text fgcolor="#888888">${data.Playlist.Description}</text>
-		
+				<text fgcolor="#888888" fontSize="8">${data.Playlist.Description}</text>
+				% end
 		</box>
 		<!-- playlist grid, resizes dynamically -->
-		<playlist
-			allowsReorder="true"
-			uri="${data.Playlist.Uri}">
-			<columnheader columnheaders="title,artist,duration,album" />
-			% for track in enum(data.Playlist.Tracks) do
-				<track 
-				uri="${track.Uri}" />
-			% end
-		</playlist>
+		
 	</section>
 </document>

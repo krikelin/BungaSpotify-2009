@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BungaSpotify09.Apps
 {
@@ -37,6 +38,19 @@ namespace BungaSpotify09.Apps
         public override void Reorder(int oldPos, int count, int newPos)
         {
             
+        }
+        public override void LoadFinished()
+        {
+            base.LoadFinished();
+            foreach (Track t in Playlist.Tracks)
+            {
+                var listViewItem = new Spider.CListView.CListViewItem(t.Name);
+                listViewItem.Spawn = this.Spider.Sections["overview"].ListView;
+                t.Item = listViewItem;
+                t.Item.Track = t;
+                this.Spider.Sections["overview"].ListView.AddItem(listViewItem);
+            }
+
         }
         public override object Loading(object arguments)
         {
