@@ -22,3 +22,6 @@ D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\B
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\NSpotifyLib.dll
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\Newtonsoft.Json.pdb
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\Newtonsoft.Json.xml
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\libspotifydotnet.dll
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\libspotify-sharp.dll
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\libspotify-sharp.pdb

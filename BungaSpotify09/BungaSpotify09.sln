@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBTest", "..\PBTest\PBTest.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyService", "..\DummyService\DummyService.csproj", "{16F9F8D4-B9A6-423C-BC3E-01E1D7C28D95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libspotify-sharp", "C:\Users\Alexander\Documents\GitHub\libspotify-sharp\libspotify-sharp\libspotify-sharp.csproj", "{33ECCB93-27D8-40DB-82E8-B47AAE19AA9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{16F9F8D4-B9A6-423C-BC3E-01E1D7C28D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16F9F8D4-B9A6-423C-BC3E-01E1D7C28D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16F9F8D4-B9A6-423C-BC3E-01E1D7C28D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33ECCB93-27D8-40DB-82E8-B47AAE19AA9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33ECCB93-27D8-40DB-82E8-B47AAE19AA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33ECCB93-27D8-40DB-82E8-B47AAE19AA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33ECCB93-27D8-40DB-82E8-B47AAE19AA9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

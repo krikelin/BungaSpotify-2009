@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B00C9790-3650-42B7-9341-228D5CA1AFE1}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BungaSpotify09</RootNamespace>
     <AssemblyName>BungaSpotify09</AssemblyName>
@@ -31,7 +31,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="libspotifydotnet">
+      <HintPath>C:\Users\Alexander\Downloads\libspotifydotnet-3.1-x86 (1)\libspotifydotnet.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\Alexander\Downloads\Json45r11\Bin\Net35\Newtonsoft.Json.dll</HintPath>
@@ -141,6 +147,10 @@
     <ProjectReference Include="..\..\SpiderView\SpiderView\SpiderView.csproj">
       <Project>{38767d2d-14d8-4744-9a60-779315b279fc}</Project>
       <Name>SpiderView</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Alexander\Documents\GitHub\libspotify-sharp\libspotify-sharp\libspotify-sharp.csproj">
+      <Project>{33eccb93-27d8-40db-82e8-b47aae19aa9c}</Project>
+      <Name>libspotify-sharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

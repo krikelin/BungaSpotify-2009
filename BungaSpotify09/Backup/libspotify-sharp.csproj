@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33ECCB93-27D8-40DB-82E8-B47AAE19AA9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>libspotify-sharp</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Events\AlbumBrowseEventArgs.cs" />
+    <Compile Include="src\Events\ArtistBrowseEventArgs.cs" />
+    <Compile Include="src\Events\EventWorkItem.cs" />
+    <Compile Include="src\Events\MusicDeliveryEventArgs.cs" />
+    <Compile Include="src\Events\PlaylistContainerEventArgs.cs" />
+    <Compile Include="src\Events\PlaylistEventArgs.cs" />
+    <Compile Include="src\Events\SearchEventArgs.cs" />
+    <Compile Include="src\Events\SessionEventArgs.cs" />
+    <Compile Include="src\Events\TracksEventArgs.cs" />
+    <Compile Include="src\Album.cs" />
+    <Compile Include="src\AlbumBrowse.cs" />
+    <Compile Include="src\Artist.cs" />
+    <Compile Include="src\ArtistBrowse.cs" />
+    <Compile Include="src\libspotify.cs" />
+    <Compile Include="src\Link.cs" />
+    <Compile Include="src\PlayList.cs" />
+    <Compile Include="src\PlaylistContainer.cs" />
+    <Compile Include="src\Search.cs" />
+    <Compile Include="src\Session.cs" />
+    <Compile Include="src\SpotifyException.cs" />
+    <Compile Include="src\Track.cs" />
+    <Compile Include="src\User.cs" />
+    <Compile Include="src\Events\ImageEventArgs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="None" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+    <VisualStudio />
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+</Project>

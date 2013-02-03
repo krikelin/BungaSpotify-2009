@@ -35,9 +35,15 @@ namespace BungaSpotify09.Apps
            
             InitializeComponent();
             Start();
+
         }
         public override void DropItem(IDataObject data)
         {
+            String d = (String)data.GetData(DataFormats.StringFormat);
+            Track track = new Track(this.Host.MusicService, d.Split(':')[2]);
+            bool dw = this.Host.MusicService.InsertTrack(this.Playlist, track, 0);
+
+
             
         }
         public override bool AllowsDrop(IDataObject data)
@@ -48,9 +54,8 @@ namespace BungaSpotify09.Apps
         {
             
         }
-        public override void LoadFinished()
+        public void Render()
         {
-            base.LoadFinished();
             foreach (Track t in Playlist.Tracks)
             {
                 var listViewItem = new Spider.CListView.CListViewItem(t.Name);
@@ -59,7 +64,41 @@ namespace BungaSpotify09.Apps
                 t.Item.Track = t;
                 this.Spider.Sections["overview"].ListView.AddItem(listViewItem);
             }
+            te = new System.Windows.Forms.Timer();
+        }
+        public override void LoadFinished()
+        {
+            base.LoadFinished();
+            this.ListView.Reordered += ListView_Reordered;
+            Render();  
+        }
+        System.Windows.Forms.Timer te;
+        public CListView ListView
+        {
+            get
+            {
+                return this.Spider.Sections["overview"].ListView;
+            }
+        }
+        void te_Tick(object sender, EventArgs e)
+        {
+            
+            Playlist.Tracks.RemoveAt(1);
+            this.Spider.Sections["overview"].ListView.Items.RemoveAt(1);
+            this.spiderView.refresh(new
+            {
+                Playlist = Playlist
+            });
+           
+            te.Stop();
+        }
 
+        void ListView_Reordered(object sender, CListView.ReorderEventArgs e)
+        {
+            
+            
+               
+            this.Playlist.Reorder(e.Position, e.Indexes, e.NewPosition);
         }
         public override object Loading(object arguments)
         {

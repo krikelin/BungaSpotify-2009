@@ -2,14 +2,32 @@
 #include('views/generic-header.xml'); 
 -- Resource file for playlist app.
 
+local get_track_duration = function (minutes) 
+	sminutes = tonumber(minutes)
+	if sminutes > 59 then
+		return (sminutes / 60) .. " hours"
+	else
+		return sminutes .. " minutes"
+	end
+end
 ?><document xmlns="http://segurify.net/TR/2011">
-	<section id="overview" height="60" title="Playlist" playlist="true">
-		<box bgcolor="#222222" padding="12,12,12,12" height="120" width="100%">
-				% if data then
+	<section id="overview" height="80" title="Playlist" playlist="true">
+		<hbox bgcolor="#222222" padding="12,12,12,12" height="120" width="100%">
+			% if data then
+			<vbox flex="1" width="320">
+			
 				<text width="100%" height="20" fgcolor="#FFFFFF">${data.Playlist.Name}</text>
 				<text fgcolor="#888888" fontSize="8">${data.Playlist.Description}</text>
-				% end
-		</box>
+				
+			</vbox>
+			<vbox width="320">
+			
+				<text width="230" fontSize="8" color="#888888" height="30">${data.Playlist.Tracks.Count} Tracks, ${get_track_duration(data.Playlist.Minutes)}</text>
+				<button id="a" onClick="subscribe" width="105" height="37" text="test" />
+			</vbox>
+			% end
+			
+		</hbox>
 		<!-- playlist grid, resizes dynamically -->
 		
 	</section>
