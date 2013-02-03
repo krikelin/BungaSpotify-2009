@@ -666,5 +666,19 @@ namespace BungaSpotify.Service
         {
             throw new NotImplementedException();
         }
+
+
+        public string NewPlaylist(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public event UserObjectsventHandler ObjectsDelivered;
+
+        public void RequestUserObjects()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

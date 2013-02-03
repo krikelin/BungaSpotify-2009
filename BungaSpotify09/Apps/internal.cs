@@ -81,6 +81,12 @@ namespace BungaSpotify09.Apps
         {
             switch (Arguments[2])
             {
+                case "add_playlist":
+                    return new SPListItem.ListIcon()
+                     {
+                         Normal = Properties.Resources.ic_new_playlist,
+                         Selected = Properties.Resources.ic_new_playlist
+                     };
                 case "whatsnew":
                     return new SPListItem.ListIcon()
                     {
@@ -107,6 +113,8 @@ namespace BungaSpotify09.Apps
         public override string GetName()
         {
             switch(Arguments[2]) {
+                case "add_playlist":
+                    return "New Playlist";
                 case "whatsnew":
                     return "What's New";
                 case "toplist":

@@ -42,7 +42,9 @@ namespace BungaSpotify09.Apps
             String d = (String)data.GetData(DataFormats.StringFormat);
             Track track = new Track(this.Host.MusicService, d.Split(':')[2]);
             bool dw = this.Host.MusicService.InsertTrack(this.Playlist, track, 0);
-
+            this.Playlist.Tracks.Insert(0, track);
+           
+            this.Render();
 
             
         }
@@ -56,6 +58,7 @@ namespace BungaSpotify09.Apps
         }
         public void Render()
         {
+            this.ListView.Items.Clear();
             foreach (Track t in Playlist.Tracks)
             {
                 var listViewItem = new Spider.CListView.CListViewItem(t.Name);
@@ -70,7 +73,13 @@ namespace BungaSpotify09.Apps
         {
             base.LoadFinished();
             this.ListView.Reordered += ListView_Reordered;
+            this.ListView.ItemsDeleting += ListView_ItemsDeleting;
             Render();  
+        }
+
+        void ListView_ItemsDeleting(object sender, CListView.ReorderEventArgs e)
+        {
+            this.Playlist.Delete(e.Indexes);
         }
         System.Windows.Forms.Timer te;
         public CListView ListView

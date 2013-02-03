@@ -46,13 +46,12 @@ namespace BungaSpotify09
             listView.AddItem(new Uri("spotify:internal:toplist"));
             listView.AddItem(new Uri("spotify:internal:playqueue"));
             listView.AddItem("-", new Uri("spotify:internal:toplist"));
-            listView.AddItem(new Uri("spotify:album:4St6b2FQD128IfMBExb1uS"));
-            listView.AddItem(new Uri("spotify:artist:12PPH919k5uHlRewv1ykBy"));
-            listView.AddItem(new Uri("spotify:user:drsounds:playlist:test"));
+            listView.AddItem(new Uri("spotify:internal:add_playlist"));
             listView.ItemSelected += listView_ItemSelected;
+            this.SpiderHost.MusicService.ObjectsDelivered += MusicService_ObjectsDelivered;
             listView.Dock = DockStyle.Left;
             listView.Width = 270;
-
+            this.SpiderHost.MusicService.RequestUserObjects();
             var panel = new Panel();
             panel.BackgroundImage = Properties.Resources.header;
             var panel2 = new Panel();
@@ -74,6 +73,14 @@ namespace BungaSpotify09
             
         }
 
+        void MusicService_ObjectsDelivered(object sender, UserObjectsEventArgs e)
+        {
+            foreach (String str in e.Objects)
+            {
+                this.listView.AddItem(new Uri(str));
+            }
+        }
+
         void searchBox_SearchClicked(object sender, EventArgs e)
         {
             try
@@ -93,8 +100,20 @@ namespace BungaSpotify09
         }
 
         SearchBox searchBox;
-        void listView_ItemSelected(object Sender, SPListView.SPListItemEventArgs e)
+        void listView_ItemSelected(object Sender, SPListView.SelectedItemEventArgs e)
         {
+            if (e.Item.Uri.ToString().StartsWith("spotify:internal:add_playlist"))
+            {
+                e.Cancel = true;
+                NewPlaylist np = new NewPlaylist();
+                if (np.ShowDialog() == DialogResult.OK)
+                {
+                    String identifier = this.SpiderHost.MusicService.NewPlaylist(np.PlaylistName);
+                    this.listView.AddItem(new Uri("" + identifier));
+                    this.listView.Refresh();
+                }
+                return;
+            }
             Navigate(e.Item.Uri);
         }
 
