@@ -30,9 +30,26 @@ namespace BungaSpotify09.Apps
         public user(SpiderHost host, String[] arguments)
             : base(host, arguments)
         {
-            
-            Template = "views\\playlist.xml";
-           
+            String[] parameters = arguments;
+            if (parameters.Length > 3)
+            {
+                if (parameters[3] == "playlist")
+                {
+                    Template = "views\\playlist.xml";
+                }
+            }
+            else
+            {
+                Template = "views\\user.xml";
+                this.spiderView.refresh(new
+                {
+                    User = new
+                    {
+                        Name = arguments[1],
+                        Uri = String.Join(":", parameters)
+                    }
+                });
+            }
             InitializeComponent();
             Start();
 
@@ -41,6 +58,7 @@ namespace BungaSpotify09.Apps
         {
             String d = (String)data.GetData(DataFormats.StringFormat);
             Track track = new Track(this.Host.MusicService, d.Split(':')[2]);
+            track.LoadAsync(new { });
             bool dw = this.Host.MusicService.InsertTrack(this.Playlist, track, 0);
             this.Playlist.Tracks.Insert(0, track);
            
@@ -72,9 +90,16 @@ namespace BungaSpotify09.Apps
         public override void LoadFinished()
         {
             base.LoadFinished();
-            this.ListView.Reordered += ListView_Reordered;
-            this.ListView.ItemsDeleting += ListView_ItemsDeleting;
-            Render();  
+            try
+            {
+                this.ListView.Reordered += ListView_Reordered;
+                this.ListView.ItemsDeleting += ListView_ItemsDeleting;
+
+                Render();
+            }
+            catch (Exception e)
+            {
+            }
         }
 
         void ListView_ItemsDeleting(object sender, CListView.ReorderEventArgs e)
@@ -111,15 +136,45 @@ namespace BungaSpotify09.Apps
         }
         public override object Loading(object arguments)
         {
-            String[] parameters = (String[])arguments;
-            Playlist playlist = this.Host.MusicService.LoadPlaylist(parameters[2], parameters[4]);
-            this.Playlist = playlist;
-            playlist.Tracks = this.Host.MusicService.GetPlaylistTracks(playlist, 0);
-            return new
             
+            String[] parameters = (String[])arguments;
+            if (parameters.Length > 3)
             {
-                Playlist = playlist
-            };
+                if (parameters[3] == "playlist")
+                {
+                    Playlist playlist = this.Host.MusicService.LoadPlaylist(parameters[2], parameters[4]);
+                    this.Playlist = playlist;
+                    playlist.Tracks = this.Host.MusicService.GetPlaylistTracks(playlist, 0);
+                    return new
+
+                    {
+                        Playlist = playlist
+                    };
+                }
+                return new { };
+            }
+            else
+            {
+#if(False)
+                Thread.Sleep(100);
+                return new
+                {
+                    User = new
+                    {
+                        Name = parameters[2],
+                        Artist = new {
+                            Name = "Dr. Sounds",
+                            Uri = "spotify:user:drsounds"
+                        },
+                        Image = "http://open.spotify.com/static/images/user.png"
+                    }
+                };
+#endif
+                return new
+                {
+                    User = this.Host.MusicService.LoadUser(parameters[2])
+                };
+            }
             
 
         }

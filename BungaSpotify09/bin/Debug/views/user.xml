@@ -1,0 +1,26 @@
+<?
+#include('views/generic-header.xml'); 
+
+if data then
+	
+else
+end 
+
+?>
+<document>
+	<section id="overview" title="Overview">
+		<hbox padding="12,12,12,12" height="252">
+			% if data then
+			<img src="${data.User.Image}" width="200" height="200" />
+			<box flex="1">
+				<link uri="${data.User.Uri}" fontSize="12" height="32" fgcolor="#FFFFFF">${data.User.Name}</link>
+				<button onClick="" uri="${data.User.Artist.Uri}" text="Artist" />
+			</box>
+			<box height="180" width="320"> 
+				
+			</box>
+			% end
+		</hbox>
+		
+	</section>
+</document>

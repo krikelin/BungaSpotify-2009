@@ -40,11 +40,11 @@ namespace BungaSpotify09.Apps
                     break;
                 case "toplist":
                     {
-                        foreach(Track t in ((TopList)currentResource).TopTracks) {
+                        /*foreach(Track t in ((TopList)currentResource).TopTracks) {
                             Spider.CListView.CListViewItem item = new Spider.CListView.CListViewItem("");
                             item.Track = t;
                             this.Spider.Sections["toplist"].ListView.Items.Add(item);
-                        }
+                        }*/
                         
                     }
                     break;

@@ -1,7 +1,6 @@
 <?
 #include('views/core-functions.xml')
 -- Example
-
 if suggested_artists then
 else
 	suggested_artists = {
@@ -39,44 +38,11 @@ end
 ?>
 <document xmlns="http://segurify.net/TR/2011">
 	<section padding="12,12,12,12" title="What's new" id="overview">
+			<text fontSize="24" fgcolor="#FFFFFF">Welcome back to 2009!</text>
 			
-			<box height="320" width="100%">
 				
-				<text size="12" fgcolor="#88ff88">What's new</text>
-				% if news then
-				% for item in news do
-				<hbox width="100%" height="64px">
-					<img width="64" height="64" uri="${item.uri}" src="${item.picture}" />
-					<vbox flex="1">
-						<link uri="${item.uri}">${item.title}</link>
-						<text>${item.description}</text>
-					</vbox>
-				</hbox>
-				% end	
-				% else
-				<text>No news found</text>
-				
-				% end
-				<text  style="font-size: 15" fgcolor="#ffaaff">Artists you might like</text>
-				<box bgcolor="#444444" padding="12,12,12,12" height="120">
-					% if suggested_artists then
-					<hbox width="100%">
-					% for i, artist in ipairs(suggested_artists) do
-						<hbox width="320">
-							<img width="64" height="64" src="${artist.image}" />
-							<box>
-								<link uri="${artist.uri}">${artist.name}</link>
-								<link fgcolor="#888888">80s</link>
-								<link fgcolor="#888888">80s</link>
-							</box>
-						</hbox>
-					% end
-					</hbox>
-					% else
-					<text fgcolor="#ffffff">No relatead artists found</text>
-					% end
-				</box>
-			</box>
+				<img src="https://www.recordunion.com/UserFiles/297/profile.jpg" width="128" height="128" uri="spotify:artist:2FOROU2Fdxew72QmueWSUy" />
+		
 			
 			
 	</section>

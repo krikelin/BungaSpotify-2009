@@ -1,17 +1,31 @@
 <?
 #include('views/generic-header.xml'); 
+
 if data then
+	
 else
 end 
+
+related_artists = {
+	{
+		Uri = "spotify:artist:12PPH919k5uHlRewv1ykBy",
+		Name = "Body Surf"
+	}
+}
 ?>
 <document>
 	<section id="overview" title="Overview">
 		<hbox padding="12,12,12,12" height="252">
 			<img src="${data.Artist.Image}" width="200" height="200" />
-		
-			<box height="180" flex="1"> 
+			<box flex="1">
+				<link uri="${data.Artist.Uri}" fontSize="12" height="32" fgcolor="#FFFFFF">${data.Artist.Name}</link>
+				<button onClick="" uri="spotify:user:drsounds" text="Profile" />
+			</box>
+			<box height="180" width="320"> 
 				<text>Related artists</text>
-				
+				% for i, artist in ipairs(related_artists) do
+				<link uri="${artist.Uri}">${artist.Name}</link>
+				% end
 			</box>
 		</hbox>
 		<hbox height="1"></hbox>
@@ -35,5 +49,17 @@ end
 <hr />
 		% end
 		% end
+	</section>
+	<section id="biography" title="Biography">
+		<vbox width="100%" padding="100,100,100,100">
+			<box class="biography" padding="100,100,100,100">
+				<text height="320" fgcolor="#000000" width="320">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Quisque at lectus vitae lorem convallis semper. Morbi viverra lectus id orci dignissim pulvinar. 
+				Curabitur non posuere orci. Aliquam tincidunt bibendum ipsum, sed rhoncus dui commodo eget. 
+				Cras dictum vulputate libero, eu facilisis tortor lobortis vitae. Ut odio urna, interdum et molestie et, 
+				suscipit sed odio. Quisque malesuada, nulla condimentum consectetur rutrum, ligula est egestas sapien, 
+				eu ultricies nulla lectus vel leo. Nam quis dolor sit amet leo laoreet pellentesque.</text>
+			</box>
+		</vbox>
 	</section>
 </document>

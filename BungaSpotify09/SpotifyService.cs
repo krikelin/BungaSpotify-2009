@@ -680,5 +680,16 @@ namespace BungaSpotify.Service
         {
             throw new NotImplementedException();
         }
+
+
+        public void MoveUserObject(int oldPos, int newPos)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void insertUserObject(string uri, int pos)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

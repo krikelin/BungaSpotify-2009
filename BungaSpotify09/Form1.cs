@@ -49,6 +49,7 @@ namespace BungaSpotify09
             listView.AddItem(new Uri("spotify:internal:add_playlist"));
             listView.ItemSelected += listView_ItemSelected;
             this.SpiderHost.MusicService.ObjectsDelivered += MusicService_ObjectsDelivered;
+            listView.ItemReordered += listView_ItemReordered;
             listView.Dock = DockStyle.Left;
             listView.Width = 270;
             this.SpiderHost.MusicService.RequestUserObjects();
@@ -71,6 +72,10 @@ namespace BungaSpotify09
             
             // add some playlists
             
+        }
+
+        void listView_ItemReordered(object sender, SPListView.ItemReorderEventArgs e)
+        {
         }
 
         void MusicService_ObjectsDelivered(object sender, UserObjectsEventArgs e)
