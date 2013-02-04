@@ -691,5 +691,11 @@ namespace BungaSpotify.Service
         {
             throw new NotImplementedException();
         }
+
+
+        public TrackCollection GetCollection(string type, string identifier)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

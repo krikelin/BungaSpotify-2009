@@ -172,4 +172,10 @@
   <data name="ic_new_playlist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ic_new_playlist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ic_own_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_own_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_own_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ic_own_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

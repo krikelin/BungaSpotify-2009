@@ -153,6 +153,26 @@ namespace BungaSpotify09.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_own_normal {
+            get {
+                object obj = ResourceManager.GetObject("ic_own_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_own_selected {
+            get {
+                object obj = ResourceManager.GetObject("ic_own_selected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_playlist_normal {
             get {
                 object obj = ResourceManager.GetObject("ic_playlist_normal", resourceCulture);

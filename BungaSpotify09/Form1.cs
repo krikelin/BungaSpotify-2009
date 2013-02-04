@@ -45,6 +45,7 @@ namespace BungaSpotify09
             listView.AddItem(new Uri("spotify:internal:whatsnew"));
             listView.AddItem(new Uri("spotify:internal:toplist"));
             listView.AddItem(new Uri("spotify:internal:playqueue"));
+            listView.AddItem(new Uri("spotify:internal:own"));
             listView.AddItem("-", new Uri("spotify:internal:toplist"));
             listView.AddItem(new Uri("spotify:internal:add_playlist"));
             listView.ItemSelected += listView_ItemSelected;

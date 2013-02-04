@@ -40,18 +40,30 @@ namespace BungaSpotify09.Apps
                     break;
                 case "toplist":
                     {
-                        /*foreach(Track t in ((TopList)currentResource).TopTracks) {
+                        foreach(Track t in ((TopList)currentResource).TopTracks) {
                             Spider.CListView.CListViewItem item = new Spider.CListView.CListViewItem("");
                             item.Track = t;
                             this.Spider.Sections["toplist"].ListView.Items.Add(item);
-                        }*/
+                        }
                         
                     }
                     break;
-                case "Play Queue":
+                case "playqueue":
                     {
                         
                     }
+                   break;
+                case "own":
+                   {
+                       foreach (Track t in ((TrackCollection)currentResource).Items)
+                       {
+                           Spider.CListView.CListViewItem item = new Spider.CListView.CListViewItem("");
+                           item.Track = t;
+                           t.Item = item;
+                           t.LoadAsync(null);
+                           this.Spider.Sections["own"].ListView.Items.Add(item);
+                       }
+                   }
                    break;
             }
         }
@@ -74,6 +86,14 @@ namespace BungaSpotify09.Apps
                     {
                         break; 
                     }
+                case "own":
+                    {
+                        currentResource = this.Host.MusicService.GetCollection("own", "");
+                        return new
+                        {
+                            Own = currentResource
+                        };
+                    }
             }
             return base.Loading(arguments);
         }
@@ -93,7 +113,6 @@ namespace BungaSpotify09.Apps
                         Normal = Properties.Resources.ic_home_normal,
                         Selected = Properties.Resources.ic_home_selected
                     };
-                    break;
                 case "playqueue":
                     return new SPListItem.ListIcon()
                     {
@@ -106,7 +125,12 @@ namespace BungaSpotify09.Apps
                         Normal = Properties.Resources.ic_toplist_normal,
                         Selected = Properties.Resources.ic_toplist_selected
                     };
-                    break;
+                case "own":
+                    return new SPListItem.ListIcon()
+                    {
+                        Normal = Properties.Resources.ic_own_normal,
+                        Selected = Properties.Resources.ic_own_selected
+                    };
             }
             return null;
         }
@@ -121,6 +145,8 @@ namespace BungaSpotify09.Apps
                     return "Top List";
                 case "playqueue":
                     return "Play Queue";
+                case "own":
+                    return "Own music";
 
             
             }
