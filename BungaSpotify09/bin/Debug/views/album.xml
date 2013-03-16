@@ -55,7 +55,7 @@ end
 			<text fgcolor="#ffff55">This release contains bad karma and is therefore disabled from listening</text>
 		</box>
 		% end
-		% make_album(data.Release, 250)
+		% make_album(data.Release, 170)
 		<!--
 		% if data.album.review then
 		<box bgcolor="#FFFFEE" padding="120,120,120,120" margin="12,12,12,12"><text>${data.album.review}</text></box>

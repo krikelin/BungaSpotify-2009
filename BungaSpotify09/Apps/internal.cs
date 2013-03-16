@@ -40,10 +40,17 @@ namespace BungaSpotify09.Apps
                     break;
                 case "toplist":
                     {
-                        foreach(Track t in ((TopList)currentResource).TopTracks) {
-                            Spider.CListView.CListViewItem item = new Spider.CListView.CListViewItem("");
-                            item.Track = t;
-                            this.Spider.Sections["toplist"].ListView.Items.Add(item);
+                        try
+                        {
+                            foreach (Track t in ((TopList)currentResource).TopTracks)
+                            {
+                                Spider.CListView.CListViewItem item = new Spider.CListView.CListViewItem("");
+                                item.Track = t;
+                                this.Spider.Sections["toplist"].ListView.Items.Add(item);
+                            }
+                        }
+                        catch (Exception e)
+                        {
                         }
                         
                     }
@@ -60,9 +67,16 @@ namespace BungaSpotify09.Apps
                            Spider.CListView.CListViewItem item = new Spider.CListView.CListViewItem("");
                            item.Track = t;
                            t.Item = item;
-                           item.Spawn = this.Spider.Sections["own"].ListView;
-                           t.LoadAsync(null);
-                           this.Spider.Sections["own"].ListView.Items.Add(item);
+                           try
+                           {
+                               item.Spawn = this.Spider.Sections["own"].ListView;
+                               t.LoadAsync(null);
+                               this.Spider.Sections["own"].ListView.Items.Add(item);
+                           }
+                           catch (Exception e)
+                           {
+                           }
+                           
                        }
                    }
                    break;

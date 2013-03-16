@@ -1,13 +1,14 @@
 <?
+
 function make_album (album, size)
 ?>
 <hbox minHeight="${size}" width="100%" padding="12,12,12,12">
 	<vbox width="${size}">
-	<img src="${album.Image}" width="${size}" height="${size}" uri="${album.Uri}" />
+	<img shadow="true" src="${album.Image}" width="${size}" height="${size}" uri="${album.Uri}" />
 	<box flex="1"><text></text></box>
 	</vbox>
 	<playlist flex="1">
-		<link uri="${album.Uri}" fontSize="10" fontWeight="bold" height="35">${album.Name} (${album.Year})</link>
+		<link uri="${album.Uri}" class="h1">${album.Name} (${album.Year})</link>
 	
 		% for track in enum(album.Tracks) do
 		<track 	uri="${track.Uri}" />
@@ -18,8 +19,40 @@ function make_album (album, size)
 	</playlist>
 </hbox>
 <?
+end
+
+
+
+function make_toplist (album, size)
+?>
+<hbox minHeight="${size}" width="100%" padding="12,12,12,12">
+	<vbox width="${size}">
+		<img src="res:toptracks" width="${size}" height="${size}" />
+		<box flex="1"><text></text></box>
+	</vbox>
+	<playlist flex="1">
+		<text class="h1">Top Hits</text>
+	
+		% for track in enum(album.TopTracks) do
+		<track 	uri="${track.Uri}" />
+		% end
+	</playlist>
+</hbox>
+<?
+end
+
+function polett (data, size) 
+?>
+<vbox width="${size}">
+	<img src="${data.Content.Image}" width="${size}" height="${size}" uri="${data.Content.Uri}" />
+	<link uri="${data.Content.Uri}">${data.Content.Name}</link>
+	<link uri="${data.Author.Uri}">${data.Author.uri}</link>
+</vbox>
+<?
 
 end
+
+
 
 function enum(o)
 	local e = o:GetEnumerator()

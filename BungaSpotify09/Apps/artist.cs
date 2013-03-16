@@ -47,13 +47,16 @@ namespace BungaSpotify09.Apps
             this.Artist = artist;
             // Load all releases
             artist.LoadReleases();
+            artist.LoadToplist();
             
             // Load tracklist for all releases
+            if(artist.Albums != null)
             foreach(Release release in artist.Albums) 
             {
                 release.LoadTracks();
             }
             // Load tracklist for all releases
+            if(artist.Singles != null)
             foreach (Release release in artist.Singles)
             {
                 release.LoadTracks();

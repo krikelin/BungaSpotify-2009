@@ -1,0 +1,59 @@
+<?
+#include('views/core-functions.xml')
+#include('views/generic-header.xml')
+-- Example
+if suggested_artists then
+else
+	suggested_artists = {
+		{
+			uri = "spotify:artist:2FOROU2Fdxew72QmueWSUy",
+			name = "Dr. Sounds",
+			image = "https://lh5.googleusercontent.com/-RH9GFSfHiKA/AAAAAAAAAAI/AAAAAAAAAAA/8addaH0mszI/s96-c/photo.jpg"
+		},
+		{
+			uri = "spotify:artist:2FOROU2Fdxew72QmueWSUy",
+			name = "Body Surf",
+			image = "https://lh5.googleusercontent.com/-RH9GFSfHiKA/AAAAAAAAAAI/AAAAAAAAAAA/8addaH0mszI/s96-c/photo.jpg"
+		},
+		{
+			uri = "spotify:artist:2FOROU2Fdxew72QmueWSUy",
+			name = "Desirégo",
+			image = "https://lh5.googleusercontent.com/-RH9GFSfHiKA/AAAAAAAAAAI/AAAAAAAAAAA/8addaH0mszI/s96-c/photo.jpg"
+		}
+	}
+end
+if album then
+else
+	album = {
+		name = "Test",
+		image = "https://lh5.googleusercontent.com/-RH9GFSfHiKA/AAAAAAAAAAI/AAAAAAAAAAA/8addaH0mszI/s96-c/photo.jpg",
+		tracks = {
+			{
+				name = "test",
+				uri = "spotify:track:3NZN6JScFFSgyWPxnWaEYb",
+				artist_uri = "spotify:track:3NZN6JScFFSgyWPxnWaEYb"
+			}
+		}
+	}
+end
+?>
+<document xmlns="http://segurify.net/TR/2011">
+	<section padding="12,12,12,12" title="What's new" id="overview">
+			<text fontSize="24" >Whatsnew</text>
+			
+			<table width="100%">
+				<tr>
+					% for i, t in enum(album) do
+					<td>${polett(album, 64)}</td>
+					% if i % 3 == 0 then
+					</tr>
+					<tr>
+					% end
+				</tr>
+			</table>
+			
+			
+	</section>
+	
+</document>
+			
