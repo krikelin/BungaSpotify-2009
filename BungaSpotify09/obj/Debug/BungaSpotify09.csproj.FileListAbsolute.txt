@@ -26,3 +26,4 @@ D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\l
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\libspotify-sharp.dll
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\libspotify-sharp.pdb
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.NewPlaylist.resources
+D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Apps.group.resources

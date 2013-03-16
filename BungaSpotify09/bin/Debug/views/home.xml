@@ -40,7 +40,11 @@ end
 <document xmlns="http://segurify.net/TR/2011">
 	<section padding="12,12,12,12" title="What's new" id="overview">
 			<text fontSize="24" >Whatsnew</text>
-			
+			<text>
+			<text>
+				
+				<link uri="spotify:user:drsounds">drsounds</link>, <link uri="spotify:user:alecca">alecca</link>
+				</text>
 			<table width="100%">
 				<tr>
 					% for i, t in enum(album) do

@@ -1,0 +1,61 @@
+<?
+#include('views/generic-header.xml'); 
+
+
+	data = {
+		Group = {
+			Image = "http://sphotos-d.ak.fbcdn.net/hphotos-ak-ash4/487605_2990791544992_458308429_n.jpg",
+			Name = "Invalid Group",
+			Uri = "spotify:group:",
+			Members = {
+				{
+					Uri = "spotify:user:drsounds",
+					Image = "http://sphotos-d.ak.fbcdn.net/hphotos-ak-ash4/487605_2990791544992_458308429_n.jpg",
+					Name = "drsounds"
+				},
+				{
+					Uri = "spotify:user:alecca",
+					Image = "http://sphotos-d.ak.fbcdn.net/hphotos-ak-ash4/487605_2990791544992_458308429_n.jpg",
+					Name = "alecca"
+				},
+				{
+					Uri = "spotify:user:alecca",
+					Image = "http://sphotos-d.ak.fbcdn.net/hphotos-ak-ash4/487605_2990791544992_458308429_n.jpg",
+					Name = "alecca"
+				},
+				{
+					Uri = "spotify:user:alecca",
+					Image = "http://sphotos-d.ak.fbcdn.net/hphotos-ak-ash4/487605_2990791544992_458308429_n.jpg",
+					Name = "alecca"
+				},
+				{
+					Uri = "spotify:user:alecca",
+					Image = "http://sphotos-d.ak.fbcdn.net/hphotos-ak-ash4/487605_2990791544992_458308429_n.jpg",
+					Name = "alecca"
+				}
+			}
+		}
+	}
+
+?>
+<document>
+	<title uri="spotify:group:a">${data.Group.Name}</title>
+	<section id="overview" title="Group">
+		<hbox padding="12,12,12,12" height="252">
+			% if data then
+			<img src="${data.Group.Image}" width="170" height="170" shadow="true" />
+			<vbox flex="1" height="170">
+				<text flex="1" height="170">Lorem ipsum dolor sit <link uri="spotify:user:drsounds">amet</link>, consectetur adipiscing elit. Nulla faucibus lacinia nisi, eu congue orci eleifend in. Morbi quis eros sed tortor facilisis scelerisque. Nulla hendrerit congue sem, vitae vehicula turpis congue nec. Nulla facilisi. Etiam scelerisque venenatis tempus. <link uri="spotify:user:drsounds">Aenean</link> tellus eros, porta ut feugiat non, fringilla in elit. Sed ut metus sem. Vivamus felis sapien, pellentesque quis porttitor id, dapibus vitae sem. Vivamus vitae tellus quis ligula tincidunt rutrum.</text>
+			</vbox>
+			<vbox height="180" width="320"> 
+				<text class="h1">Group members</text>
+				<text>
+				<? for i, member in ipairs(data.Group.Members) do ?><link uri="${member.Uri}">${member.Name}</link>, <? end ?>
+				</text>
+			</vbox>
+			% end
+			
+		</hbox>
+		<text class="adivider" width="100%">Feed</text>
+	</section>
+</document>

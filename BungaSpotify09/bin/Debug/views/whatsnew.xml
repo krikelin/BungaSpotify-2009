@@ -39,7 +39,9 @@ end
 <document xmlns="http://segurify.net/TR/2011">
 	<section padding="12,12,12,12" title="What's new" id="overview">
 			<text fontSize="24" fgcolor="#FFFFFF">Welcome back to 2009!</text>
-			
+			<text>
+							<link uri="spotify:group:drsounds">Group</link>
+			</text>
 				
 				<img src="https://www.recordunion.com/UserFiles/297/profile.jpg" width="128" height="128" uri="spotify:artist:2FOROU2Fdxew72QmueWSUy" />
 		

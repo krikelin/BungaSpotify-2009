@@ -29,8 +29,10 @@ namespace BungaSpotify09
         public Style Stylesheet = new PixelStyle();
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             SpiderHost = new Spider.SpiderHost(new DummyService());
+            SpiderHost.Notify += SpiderHost_Notify;
+            SpiderHost.RegistredAppTypes.Add("group", typeof(Apps.group));
             SpiderHost.RegistredAppTypes.Add("internal", typeof(Apps.@internal));
             SpiderHost.RegistredAppTypes.Add("playqueue", typeof(Apps.playqueue));
             SpiderHost.RegistredAppTypes.Add("artist", typeof(Apps.artist));
@@ -63,6 +65,10 @@ namespace BungaSpotify09
             panel.Dock = DockStyle.Top;
             panel2.Height = panel2.BackgroundImage.Height;
             panel.Height = panel.BackgroundImage.Height;
+            infoBar = new infobar(this.Stylesheet);
+            infoBar.Hide();
+            this.Controls.Add(infoBar);
+            infoBar.Dock = DockStyle.Top;
             this.Controls.Add(panel);
 
             this.Controls.Add(panel2);
@@ -71,9 +77,14 @@ namespace BungaSpotify09
             searchBox.Left = 80;
             searchBox.Top = 26;
             searchBox.SearchClicked += searchBox_SearchClicked;
-            
+           
             // add some playlists
             
+        }
+        infobar infoBar;
+        void SpiderHost_Notify(object sender, NotificationEventArgs e)
+        {
+            this.infoBar.ShowMessage(e.Text, e.Type);
         }
 
         void listView_ItemReordered(object sender, SPListView.ItemReorderEventArgs e)

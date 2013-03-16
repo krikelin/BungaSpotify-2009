@@ -10,6 +10,14 @@ related_artists = {
 	{
 		Uri = "spotify:artist:12PPH919k5uHlRewv1ykBy",
 		Name = "Body Surf"
+	},
+	{
+		Uri = "spotify:artist:0LhHRmSd1EYM5QdNeNnCoQ",
+		Name = "Darude"
+	},
+	{
+		Uri = "spotify:artist:2FOROU2Fdxew72QmueWSUy",
+		Name = "Dr. Sounds"
 	}
 }
 
@@ -17,18 +25,20 @@ related_artists = {
 <document>
 	<title uri="${data.Artist.Uri}">${data.Artist.Name}</title>
 	<section id="overview" title="Overview">
-		<hbox padding="12,12,12,12" height="164">
-			<img src="${data.Artist.Image}" width="132" height="132" />
+		<hbox padding="12,12,12,12" height="190" width="100%">
+			<img src="${data.Artist.Image}" shadow="true" width="170" height="170" />
 			<box flex="1">
 				<text height="164">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus lacinia nisi, eu congue orci eleifend in. Morbi quis eros sed tortor facilisis scelerisque. Nulla hendrerit congue sem, vitae vehicula turpis congue nec. Nulla facilisi. Etiam scelerisque venenatis tempus. Aenean tellus eros, porta ut feugiat non, fringilla in elit. Sed ut metus sem. Vivamus felis sapien, pellentesque quis porttitor id, dapibus vitae sem. Vivamus vitae tellus quis ligula tincidunt rutrum.</text>
 		<!--		<link uri="${data.Artist.Uri}" fontSize="12" height="32" fgcolor="#FFFFFF">${data.Artist.Name}</link>
 				<button onClick="" uri="spotify:user:drsounds" text="Profile" /> -->
 			</box>
-			<box height="164" width="520"> 
+			<box height="190" width="520"> 
 				<text class="h1">Related artists</text>
-				% for i, artist in ipairs(related_artists) do
-				<link uri="${artist.Uri}">${artist.Name}</link>
-				% end
+				<text height="190">
+					% for i, artist in ipairs(related_artists) do
+* <link uri="${artist.Uri}">${artist.Name}</link>
+					% end
+				</text>
 			</box>
 		</hbox>
 		% if data.Artist.TopList then
