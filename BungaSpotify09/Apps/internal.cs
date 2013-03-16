@@ -60,6 +60,7 @@ namespace BungaSpotify09.Apps
                            Spider.CListView.CListViewItem item = new Spider.CListView.CListViewItem("");
                            item.Track = t;
                            t.Item = item;
+                           item.Spawn = this.Spider.Sections["own"].ListView;
                            t.LoadAsync(null);
                            this.Spider.Sections["own"].ListView.Items.Add(item);
                        }
@@ -140,7 +141,7 @@ namespace BungaSpotify09.Apps
                 case "add_playlist":
                     return "New Playlist";
                 case "whatsnew":
-                    return "What's New";
+                    return "Home";
                 case "toplist":
                     return "Top List";
                 case "playqueue":

@@ -40,6 +40,8 @@ else
 end 
 ?>
 <document xmlns="http://segurify.net/TR/2011">
+	<title uri="${data.Release.Artist.Uri}">${data.Release.Artist.Name}</title>
+	<title uri="${data.Release.Uri}">${data.Release.Name}</title>
 	<section padding="12,12,12,12" id="overview" title="Overview">
 		
 		% if data.Release.RealStatus == 1 then

@@ -54,9 +54,10 @@ namespace BungaSpotify09
             listView.Dock = DockStyle.Left;
             listView.Width = 270;
             this.SpiderHost.MusicService.RequestUserObjects();
-            var panel = new Panel();
+            var panel = new AppHeader((PixelStyle)this.Stylesheet);
             panel.BackgroundImage = Properties.Resources.header;
-            var panel2 = new Panel();
+            
+            var panel2 = new AppHeader((PixelStyle)this.Stylesheet);
             panel2.BackgroundImage = Properties.Resources.footer;
             panel2.Dock = DockStyle.Bottom;
             panel.Dock = DockStyle.Top;
@@ -68,7 +69,7 @@ namespace BungaSpotify09
             searchBox = new SearchBox();
             panel.Controls.Add(searchBox);
             searchBox.Left = 80;
-            searchBox.Top = 20;
+            searchBox.Top = 26;
             searchBox.SearchClicked += searchBox_SearchClicked;
             
             // add some playlists

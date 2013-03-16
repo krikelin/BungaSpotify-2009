@@ -8,8 +8,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net; 
-using System.Net.Sockets;
 using System.Windows.Forms; 
 namespace BungaSpotify09.Apps
 {
@@ -29,29 +27,29 @@ namespace BungaSpotify09.Apps
             this.Messages = new Dictionary<string, List<object>>();
 
         }
-        public Protocol protocol;
+        public Protocol Protocol;
         public void LoadScheme(String file)
         {
             using (StreamReader sr = new StreamReader(file))
             {
-                protocol = new Protocol(sr.ReadToEnd());
+                Protocol = new Protocol(sr.ReadToEnd());
                 sr.Close();
-                
             }
             
         }
-
         public app(SpiderHost host, String[] arguments)
             : base(host, arguments)
         {
             InitializeComponent();
+            String folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            this.Template = (folder + "\\Spider\\" + arguments[0] + "\\view.xml");
+            LoadScheme(folder + "\\spider\\" + arguments[0] + "\\view.proto");
+            Start();
         }
         public override void Navigate(string[] arguments)
         {
             base.Navigate(arguments);
-            String folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-           
-            this.Spider.LoadFile( folder + "\\Spider\\" + arguments[0] + ".xml");
+            
         }
         private void artist_Load(object sender, EventArgs e)
         {
