@@ -21,7 +21,7 @@ namespace BungaSpotify09.Apps
             // artist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.Name = "artist";
+            this.Name = "app";
             this.Load += new System.EventHandler(this.artist_Load);
             this.ResumeLayout(false);
             this.Messages = new Dictionary<string, List<object>>();
@@ -42,8 +42,8 @@ namespace BungaSpotify09.Apps
         {
             InitializeComponent();
             String folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-            this.Template = (folder + "\\Spider\\" + arguments[0] + "\\view.xml");
-            LoadScheme(folder + "\\spider\\" + arguments[0] + "\\view.proto");
+            this.Template = (folder + "\\Spider\\" + arguments[2] + "\\view.xml");
+          //  LoadScheme(folder + "\\spider\\" + arguments[0] + "\\view.proto");
             Start();
         }
         public override void Navigate(string[] arguments)

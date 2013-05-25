@@ -66,6 +66,7 @@ namespace BungaSpotify09
             SpiderHost.RegistredAppTypes.Add("group", typeof(Apps.group));
             SpiderHost.RegistredAppTypes.Add("internal", typeof(Apps.@internal));
             SpiderHost.RegistredAppTypes.Add("playqueue", typeof(Apps.playqueue));
+            SpiderHost.RegistredAppTypes.Add("app", typeof(Apps.app));
             SpiderHost.RegistredAppTypes.Add("artist", typeof(Apps.artist));
             SpiderHost.RegistredAppTypes.Add("album", typeof(Apps.album));
             SpiderHost.RegistredAppTypes.Add("search", typeof(Apps.search));
