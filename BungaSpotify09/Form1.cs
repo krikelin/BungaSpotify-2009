@@ -1,4 +1,4 @@
-﻿using BungaSpotify.Service;
+﻿
 using Spider;
 using Spider.Media;
 using Spider.Skinning;
@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,36 @@ namespace BungaSpotify09
 {
     public partial class Form1 : Form
     {
+        #region Appearance
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd,
+                         int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        // Define the CS_DROPSHADOW constant
+        private const int CS_DROPSHADOW = 0x00020000;
+
+        // Override the CreateParams property
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            System.Drawing.Rectangle rect = Screen.GetWorkingArea(this);
+            this.MaximizedBounds = Screen.GetWorkingArea(this);
+        }
+        #endregion
         private Spider.SpiderHost SpiderHost;
         private Timer tmrReload;
         public Form1()
@@ -44,12 +75,14 @@ namespace BungaSpotify09
             this.Controls.Add(SpiderHost);
             SpiderHost.Dock = DockStyle.Fill;
             this.Controls.Add(listView);
-            listView.AddItem(new Uri("spotify:internal:whatsnew"));
-            listView.AddItem(new Uri("spotify:internal:toplist"));
-            listView.AddItem(new Uri("spotify:internal:playqueue"));
-            listView.AddItem(new Uri("spotify:internal:own"));
-            listView.AddItem("-", new Uri("spotify:internal:toplist"));
-            listView.AddItem(new Uri("spotify:internal:add_playlist"));
+
+            listView.ItemInserted += listView_ItemInserted;
+            listView.AddItem(new Uri("spotify:internal:whatsnew"), true);
+            listView.AddItem(new Uri("spotify:internal:toplist"), true);
+            listView.AddItem(new Uri("spotify:internal:playqueue"), true);
+            listView.AddItem(new Uri("spotify:internal:own"), true);
+            listView.AddItem("-", new Uri("spotify:internal:toplist"), true);
+            listView.AddItem(new Uri("spotify:internal:add_playlist"), true);
             listView.ItemSelected += listView_ItemSelected;
             this.SpiderHost.MusicService.ObjectsDelivered += MusicService_ObjectsDelivered;
             listView.ItemReordered += listView_ItemReordered;
@@ -64,12 +97,14 @@ namespace BungaSpotify09
             panel2.Dock = DockStyle.Bottom;
             panel.Dock = DockStyle.Top;
             panel2.Height = panel2.BackgroundImage.Height;
+            panel2.MouseDown += panel2_MouseDown;
             panel.Height = panel.BackgroundImage.Height;
             infoBar = new infobar(this.Stylesheet);
             infoBar.Hide();
             this.Controls.Add(infoBar);
             infoBar.Dock = DockStyle.Top;
             this.Controls.Add(panel);
+            panel.MouseMove += panel_MouseMove;
 
             this.Controls.Add(panel2);
             searchBox = new SearchBox();
@@ -79,6 +114,25 @@ namespace BungaSpotify09
             searchBox.SearchClicked += searchBox_SearchClicked;
            
             // add some playlists
+            
+        }
+
+        void listView_ItemInserted(object sender, ItemInsertEventArgs e)
+        {
+            this.SpiderHost.MusicService.insertUserObject(e.Uri.ToString(), e.Position);
+        }
+
+        void panel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 6);
+            }
+        }
+
+        void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
             
         }
         infobar infoBar;
@@ -95,7 +149,7 @@ namespace BungaSpotify09
         {
             foreach (String str in e.Objects)
             {
-                this.listView.AddItem(new Uri(str));
+                this.listView.AddItem(new Uri(str), true);
             }
         }
 
@@ -127,7 +181,7 @@ namespace BungaSpotify09
                 if (np.ShowDialog() == DialogResult.OK)
                 {
                     String identifier = this.SpiderHost.MusicService.NewPlaylist(np.PlaylistName);
-                    this.listView.AddItem(new Uri("" + identifier));
+                    this.listView.AddItem(new Uri("" + identifier), false);
                     this.listView.Refresh();
                 }
                 return;

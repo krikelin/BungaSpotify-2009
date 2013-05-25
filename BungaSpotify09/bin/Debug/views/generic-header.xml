@@ -7,16 +7,19 @@ function make_album (album, size)
 	<img shadow="true" src="${album.Image}" width="${size}" height="${size}" uri="${album.Uri}" />
 	<box flex="1"><text></text></box>
 	</vbox>
-	<playlist flex="1">
-		<link uri="${album.Uri}" class="h1">${album.Name} (${album.Year})</link>
-	
-		% for track in enum(album.Tracks) do
-		<track 	uri="${track.Uri}" />
-		% end
-		% if album.Copyright then
-		<text fontSize="8" fgcolor="#4a4a4a">${album.Copyright}</text>
-		% end
-	</playlist>
+	<vbox flex="1">
+		<link uri="${album.Uri}" class="h1" height="30">${album.Name} (${album.Year})</link>
+
+		<playlist flex="1">
+			
+			% for track in enum(album.Tracks) do
+			<track 	uri="${track.Uri}" />
+			% end
+			% if album.Copyright then
+			<text fontSize="8" fgcolor="#4a4a4a">${album.Copyright}</text>
+			% end
+		</playlist>
+	</vbox>
 </hbox>
 <?
 end
@@ -30,13 +33,16 @@ function make_toplist (album, size)
 		<img src="res:toptracks" width="${size}" height="${size}" />
 		<box flex="1"><text></text></box>
 	</vbox>
-	<playlist flex="1">
+	<vbox flex="1">
 		<text class="h1">Top Hits</text>
-	
-		% for track in enum(album.TopTracks) do
-		<track 	uri="${track.Uri}" />
-		% end
-	</playlist>
+		<playlist flex="1">
+			
+		
+			% for track in enum(album.TopTracks) do
+			<track 	uri="${track.Uri}" />
+			% end
+		</playlist>
+	</vbox>
 </hbox>
 <?
 end

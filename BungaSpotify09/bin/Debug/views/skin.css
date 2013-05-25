@@ -1,0 +1,11 @@
+body {
+	background-color: #eeeeee;
+}
+infobar::info {
+	background: -spider-slice-bitmap(skin.png,187,98,30);
+	color: #000000;
+	color: #FFFFFF;
+	color: #000000;
+	height: 30;
+	padding: 10,10,10,10;
+}

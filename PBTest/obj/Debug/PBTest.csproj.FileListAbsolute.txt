@@ -8,3 +8,14 @@ D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\DotLiquid
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\SpiderView.pdb
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.exe
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.pdb
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\PBTest.exe.config
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\PBTest.exe
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\PBTest.pdb
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\SpiderView.exe
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\Newtonsoft.Json.dll
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\Interop.WMPLib.dll
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\DotLiquid.dll
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin\Debug\SpiderView.pdb
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.csprojResolveAssemblyReference.cache
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.exe
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.pdb

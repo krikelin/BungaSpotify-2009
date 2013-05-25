@@ -42,9 +42,14 @@ end
 			<text>
 							<link uri="spotify:group:drsounds">Group</link>
 			</text>
-				
+			
+			<text fontsize="24" fgcolor="#aaeeff">Recent releases</text>
+			<flow width="30">
+				% for i=1,  5 do
 				<img src="https://www.recordunion.com/UserFiles/297/profile.jpg" width="128" height="128" uri="spotify:artist:2FOROU2Fdxew72QmueWSUy" />
-		
+				% end
+			</flow>
+			
 			
 			
 	</section>

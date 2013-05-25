@@ -3,3 +3,8 @@ D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\bin\Debug\Dum
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\obj\Debug\DummyService.csprojResolveAssemblyReference.cache
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\obj\Debug\DummyService.dll
 D:\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\obj\Debug\DummyService.pdb
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\bin\Debug\DummyService.dll
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\bin\Debug\DummyService.pdb
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\obj\Debug\DummyService.csprojResolveAssemblyReference.cache
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\obj\Debug\DummyService.dll
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\DummyService\obj\Debug\DummyService.pdb

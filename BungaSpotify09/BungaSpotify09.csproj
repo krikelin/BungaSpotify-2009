@@ -35,8 +35,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="libspotifydotnet">
-      <HintPath>C:\Users\Alexander\Downloads\libspotifydotnet-3.1-x86 (1)\libspotifydotnet.dll</HintPath>
+    <Reference Include="lua51">
+      <HintPath>C:\Windows.old.000\Users\Alexander\Documents\BungaSpotify-2009\BungaSpotify09\bin\Debug\lua51.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -66,6 +66,9 @@
     <Compile Include="Apps\app.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Apps\page.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Apps\group.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,7 +93,6 @@
     <Compile Include="NewPlaylist.Designer.cs">
       <DependentUpon>NewPlaylist.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpotifyService.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Apps\app.resx">
       <DependentUpon>app.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apps\page.resx">
+      <DependentUpon>page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apps\group.resx">
       <DependentUpon>group.cs</DependentUpon>
@@ -162,10 +167,6 @@
     <ProjectReference Include="..\..\SpiderView\SpiderView\SpiderView.csproj">
       <Project>{38767d2d-14d8-4744-9a60-779315b279fc}</Project>
       <Name>SpiderView</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\Alexander\Documents\GitHub\libspotify-sharp\libspotify-sharp\libspotify-sharp.csproj">
-      <Project>{33eccb93-27d8-40db-82e8-b47aae19aa9c}</Project>
-      <Name>libspotify-sharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +231,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\ic_own_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="style.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

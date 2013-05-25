@@ -17,8 +17,7 @@ namespace BungaSpotify09
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            // BungaSpotify.Service.SpotifyService spotify = new BungaSpotify.Service.SpotifyService();
-            // spotify.LoadTrack("6APMhJwtqQMf7jDzqkNYgf");
+            
         }
     }
 }
