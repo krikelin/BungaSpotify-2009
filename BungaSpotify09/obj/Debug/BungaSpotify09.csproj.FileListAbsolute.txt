@@ -55,3 +55,5 @@ D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpoti
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Properties.Resources.resources
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.SearchBox.resources
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.csproj.GenerateResource.Cache
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.InputField.resources
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.InputForm.resources

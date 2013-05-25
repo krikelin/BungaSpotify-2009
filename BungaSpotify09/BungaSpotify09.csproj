@@ -87,6 +87,18 @@
     <Compile Include="Apps\Whatsnew.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="InputField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InputField.Designer.cs">
+      <DependentUpon>InputField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputForm.Designer.cs">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewPlaylist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputField.resx">
+      <DependentUpon>InputField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewPlaylist.resx">
       <DependentUpon>NewPlaylist.cs</DependentUpon>

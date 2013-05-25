@@ -50,6 +50,42 @@ namespace BungaSpotify09.Apps
         {
             this.spiderView.Refresh(entity);
         }
+        public object ask(object data)
+        {
+           
+            LuaTable table = (LuaTable)data;
+            foreach (LuaTable field in table.Values)
+            {
+                List<InputField> inputFields = new List<InputField>();
+                foreach (LuaTable t in table.Values)
+                {
+                    int i = 0;
+                    InputField inputField = new InputField();
+                    foreach (string tt in t.Keys)
+                    {
+                        if (tt == "title")
+                        {
+                            inputField.Title = (String)t.Values.OfType<string>().ElementAt(i);
+                        }
+                        if (tt == "key")
+                        {
+                            inputField.Key = (String)t.Values.OfType<string>().ElementAt(i);
+                        }
+
+                    }
+                    inputFields.Add(inputField);
+
+                }
+                InputForm inputForm = new InputForm(inputFields);
+                if (inputForm.ShowDialog() == DialogResult.OK)
+                {
+                    return inputForm.Data;
+                }
+
+            }
+            return null;
+           
+        }
         private string[] arguments;
         public app(SpiderHost host, String[] arguments)
             : base(host, arguments)
@@ -65,6 +101,7 @@ namespace BungaSpotify09.Apps
             // Register the send object
             this.spiderView.Scripting.RegisterFunction("sendRequest", new lua_send_request(luaSendRequest), "");
             this.spiderView.Scripting.RegisterFunction("setEntity", (object)this, typeof(app).GetMethod("setEntity"));
+            this.spiderView.Scripting.RegisterFunction("ask", (object)this, typeof(app).GetMethod("ask"));
 
             Start();
             // Load Manifest
