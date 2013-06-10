@@ -57,6 +57,7 @@ namespace BungaSpotify09
        
 
         SPListView listView;
+        
         public Style Stylesheet = new PixelStyle();
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -78,9 +79,9 @@ namespace BungaSpotify09
             this.Controls.Add(listView);
 
             listView.ItemInserted += listView_ItemInserted;
-            listView.AddItem(new Uri("spotify:internal:whatsnew"), true);
+            listView.AddItem(new Uri("spotify:internal:home"), true);
             listView.AddItem(new Uri("spotify:internal:toplist"), true);
-            listView.AddItem(new Uri("spotify:internal:playqueue"), true);
+            listView.AddItem(new Uri("spotify:internal:playqueue#queue"), true);
             listView.AddItem(new Uri("spotify:internal:own"), true);
             listView.AddItem("-", new Uri("spotify:internal:toplist"), true);
             listView.AddItem(new Uri("spotify:internal:add_playlist"), true);
@@ -90,6 +91,7 @@ namespace BungaSpotify09
             listView.Dock = DockStyle.Left;
             listView.Width = 270;
             this.SpiderHost.MusicService.RequestUserObjects();
+            this.SpiderHost.MusicService.PlaybackStarted += MusicService_PlaybackStarted;
             var panel = new AppHeader((PixelStyle)this.Stylesheet);
             panel.BackgroundImage = Properties.Resources.header;
             
@@ -116,6 +118,11 @@ namespace BungaSpotify09
            
             // add some playlists
             
+        }
+
+        void MusicService_PlaybackStarted(object sender, EventArgs e)
+        {
+            (this.SpiderHost.Apps["spotify:internal:playqueue"] as Apps.@internal).Start();
         }
 
         void listView_ItemInserted(object sender, ItemInsertEventArgs e)

@@ -45,7 +45,10 @@ namespace BungaSpotify09.Apps
         }
         public override string GetName()
         {
-            return release.Name;
+            if (release != null)
+                return release.Name != null ? release.Name : "";
+            else
+                return "";
         }
         private void artist_Load(object sender, EventArgs e)
         {
@@ -53,7 +56,10 @@ namespace BungaSpotify09.Apps
         }
         public override string GetSubName()
         {
-            return "by " +release.Artist.Name;
+            if (release != null)
+                return "by " + release.Artist.Name;
+            else
+                return "";
         }
         public override SPListItem.ListIcon GetIcon()
         {

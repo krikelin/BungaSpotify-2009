@@ -32,7 +32,7 @@ related_artists = {
 		<!--		<link uri="${data.Artist.Uri}" fontSize="12" height="32" fgcolor="#FFFFFF">${data.Artist.Name}</link>
 				<button onClick="" uri="spotify:user:drsounds" text="Profile" /> -->
 			</box>
-			<box height="190" width="520"> 
+			<box height="190" width="220"> 
 				<text class="h1">Related artists</text>
 				<text height="190">
 					% for i, artist in ipairs(related_artists) do

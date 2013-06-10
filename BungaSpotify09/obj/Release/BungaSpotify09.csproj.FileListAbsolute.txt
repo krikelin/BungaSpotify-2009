@@ -53,3 +53,5 @@ D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpoti
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Release\Newtonsoft.Json.pdb
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Release\Newtonsoft.Json.xml
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Release\lua51.dll
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Release\BungaSpotify09.InputField.resources
+D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Release\BungaSpotify09.InputForm.resources

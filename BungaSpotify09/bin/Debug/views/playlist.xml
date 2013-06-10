@@ -11,8 +11,8 @@ local get_track_duration = function (minutes)
 	end
 end
 ?><document xmlns="http://segurify.net/TR/2011">
-	<section id="overview" height="80" title="Playlist" playlist="true">
-		<hbox bgcolor="#222222" padding="12,12,12,12" height="120" width="100%">
+	<section id="overview" height="0" title="Playlist" playlist="true">
+	<!--	<hbox bgcolor="#222222" padding="12,12,12,12" height="120" width="100%">
 			% if data then
 			<vbox flex="1" width="320">
 			
@@ -27,7 +27,7 @@ end
 			</vbox>
 			% end
 			
-		</hbox>
+		</hbox>-->
 		<!-- playlist grid, resizes dynamically -->
 		
 	</section>

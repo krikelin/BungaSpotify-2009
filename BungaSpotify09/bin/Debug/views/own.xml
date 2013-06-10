@@ -3,7 +3,7 @@
 
 ?>
 <view xmlns="http://segurify.net/TR/2011">
-	<section padding="5" height="30" playlist="true" title="Own music" id="own">
+	<section padding="5" height="30" playlist="true" title="Own music" id="overview">
 		<text>This is a list of music that are your own</text>
 		
 	</section>

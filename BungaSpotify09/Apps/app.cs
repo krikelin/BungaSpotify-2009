@@ -4,11 +4,13 @@ using Spider;
 using SpiderView.ProtocolBuffer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Net.WebSockets;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -46,9 +48,50 @@ namespace BungaSpotify09.Apps
         String folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
         public delegate void lua_send_request(object data);
         public delegate void lua_set_entity(object entity);
+        public delegate void lua_alax(string method, string url, string onreadystatechange);
         public void setEntity(object entity)
         {
             this.spiderView.Refresh(entity);
+        }
+        public class AlaxArgs
+        {
+            public String url;
+            public string method;
+            public String callback;
+            public JObject data;
+        }
+        public void alax(String method, String url, String onreadystatechange)
+        {
+            
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.DoWork +=bw_DoWork;
+            bw.RunWorkerCompleted += bw_RunWorkerCompleted;
+            bw.RunWorkerAsync(new AlaxArgs() { callback = onreadystatechange, method = method, url = url });
+    
+        }
+
+        void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            AlaxArgs data = (AlaxArgs)e.Result;
+
+            this.spiderView.Scripting.InvokeFunction(data.callback, data.data);
+        }
+
+        void bw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            AlaxArgs args = (AlaxArgs)e.Argument;
+            WebClient wc = new WebClient();
+            try
+            {
+                String data = wc.DownloadString(args.url);
+                JObject obj = JObject.Parse(data);
+                args.data = obj;
+                e.Result = args;
+            }
+            catch (Exception ex)
+            {
+                e.Result = "error";
+            }
         }
         public object ask(object data)
         {
@@ -100,6 +143,7 @@ namespace BungaSpotify09.Apps
           
             // Register the send object
             this.spiderView.Scripting.RegisterFunction("sendRequest", new lua_send_request(luaSendRequest), "");
+            this.spiderView.Scripting.RegisterFunction("alax", new lua_alax(alax), "");
             this.spiderView.Scripting.RegisterFunction("setEntity", (object)this, typeof(app).GetMethod("setEntity"));
             this.spiderView.Scripting.RegisterFunction("ask", (object)this, typeof(app).GetMethod("ask"));
 

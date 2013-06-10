@@ -39,8 +39,6 @@ D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpoti
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\Interop.WMPLib.dll
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\DotLiquid.dll
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\SpiderView.pdb
-D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\Newtonsoft.Json.pdb
-D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\bin\Debug\Newtonsoft.Json.xml
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.csprojResolveAssemblyReference.cache
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Apps.artist.resources
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\BungaSpotify09\obj\Debug\BungaSpotify09.Apps.album.resources

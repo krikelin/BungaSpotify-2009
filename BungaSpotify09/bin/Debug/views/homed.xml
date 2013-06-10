@@ -1,5 +1,6 @@
 <?
 #include('views/core-functions.xml')
+#include('views/generic-header.xml')
 -- Example
 if suggested_artists then
 else
@@ -38,20 +39,13 @@ end
 ?>
 <document xmlns="http://segurify.net/TR/2011">
 	<section padding="12,12,12,12" title="What's new" id="overview">
-			<text fontSize="24" fgcolor="#FFFFFF">Welcome back to 2009!</text>
-			<text>
-							<link uri="spotify:group:drsounds">Group</link>
-			</text>
-			
-			<text fontsize="24" fgcolor="#aaeeff">Recent releases</text>
-			<flow width="30">
-				% for i, album in enum(data.Home.Albums) do
-				<img src="${album.Image}" uri="${album.uri}" />
-				% if i % 3 == 0 then
-			</flow>
-			
-			
-			
+			<text fontSize="24" >Whatsnew</text>
+		
+			% for i, album in enum(data.Home.Albums) do
+			<img src="${album.Image}" uri="${album.uri}" />
+			% if i % 3 == 0 then
+		
+			% end			
 	</section>
 	
 </document>

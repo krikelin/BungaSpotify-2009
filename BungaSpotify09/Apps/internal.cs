@@ -34,7 +34,7 @@ namespace BungaSpotify09.Apps
         {
             switch ((string)((string[])Arguments)[2])
             {
-                case "whatsnew":
+                case "home":
                     {
                     }
                     break;
@@ -57,8 +57,51 @@ namespace BungaSpotify09.Apps
                     break;
                 case "playqueue":
                     {
-                        
+                        if (currentResource != null)
+                        {
+                            this.Spider.Sections["playqueue"].ListView.Items.Clear();
+                            foreach (Track t in (currentResource as PlayQueue).Queue)
+                            {
+
+                                Spider.CListView.CListViewItem listViewItem = new Spider.CListView.CListViewItem(t.Name);
+                                listViewItem.Spawn = this.Spider.Sections["playqueue"].ListView;
+                                t.Item = listViewItem;
+                                t.Item.Track = t;
+                                
+                                this.Spider.Sections["playqueue"].ListView.Items.Add(listViewItem);
+                            }
+                            this.Spider.Sections["history"].ListView.Items.Clear();
+                            foreach (Track t in (currentResource as PlayQueue).History)
+                            {
+
+                                Spider.CListView.CListViewItem listViewItem = new Spider.CListView.CListViewItem(t.Name);
+                                listViewItem.Spawn = this.Spider.Sections["history"].ListView;
+                                t.Item = listViewItem;
+                                t.Item.Track = t;
+
+                                this.Spider.Sections["history"].ListView.Items.Add(listViewItem);
+                            }
+                        }
                     }
+                    break;
+                case "history":
+                   {
+                       if (currentResource != null)
+                       {
+                           this.Spider.Sections["history"].ListView.Items.Clear();
+                           foreach (Track t in (currentResource as TrackCollection))
+                           {
+
+                               Spider.CListView.CListViewItem listViewItem = new Spider.CListView.CListViewItem(t.Name);
+                               listViewItem.Spawn = this.Spider.Sections["history"].ListView;
+                               t.Item = listViewItem;
+                               t.Item.Track = t;
+
+                               this.Spider.Sections["history"].ListView.Items.Add(listViewItem);
+                           }
+                       }
+                   }
+
                    break;
                 case "own":
                    {
@@ -87,8 +130,6 @@ namespace BungaSpotify09.Apps
         {
             switch ((string)((string[])arguments)[2])
             {
-                case "whatsnew":
-                    return base.Loading(arguments);
                 case "toplist":
                     {
                         currentResource = this.Host.MusicService.LoadTopListForResource(this.Host.MusicService.GetCurrentCountry());
@@ -97,10 +138,25 @@ namespace BungaSpotify09.Apps
                         };
 
                     }
-                case "Play Queue":
+                case "playqueue":
                     {
-                        break; 
+                        currentResource = new PlayQueue(this.Host.MusicService);
+
+                        foreach (Track t in (this.Host.PlayQueue))
+                        {
+                            Track track = t;
+                            (currentResource as PlayQueue).Queue.Enqueue(track);
+                        }
+                        foreach (Track t in (this.Host.PlayHistory).Reverse())
+                        {
+                            Track track = t;
+                            (currentResource as PlayQueue).History.Push(track);
+                        }
+                        return currentResource;
+                      
+                    
                     }
+             
                 case "own":
                     {
                         currentResource = this.Host.MusicService.GetCollection("own", "");
@@ -109,6 +165,12 @@ namespace BungaSpotify09.Apps
                             Own = currentResource
                         };
                     }
+                case "home":
+                    currentResource = this.Host.MusicService.GetCollection("whatsnew", 0);
+                    return new
+                    {
+                        Home = currentResource
+                    };
             }
             return base.Loading(arguments);
         }
@@ -122,7 +184,7 @@ namespace BungaSpotify09.Apps
                          Normal = Properties.Resources.ic_new_playlist,
                          Selected = Properties.Resources.ic_new_playlist
                      };
-                case "whatsnew":
+                case "home":
                     return new SPListItem.ListIcon()
                     {
                         Normal = Properties.Resources.ic_home_normal,
@@ -154,7 +216,7 @@ namespace BungaSpotify09.Apps
             switch(Arguments[2]) {
                 case "add_playlist":
                     return "New Playlist";
-                case "whatsnew":
+                case "home":
                     return "Home";
                 case "toplist":
                     return "Top List";
