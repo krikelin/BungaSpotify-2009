@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BungaSpotify09.Apps
@@ -22,12 +23,21 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
             
         }
-        public @internal(SpiderHost host, String[] arguments)
-            : base(host, arguments)
+        public override bool AcceptsUri(string uri)
+        {
+            Regex regex = new Regex(uri);
+            return regex.IsMatch("spotify:internal:home");
+        }
+        public @internal(SpiderHost host)
+            : base(host)
         {
             InitializeComponent();
+           
+        }
+        public override void Navigate(string[] arguments)
+        {
             this.Arguments = arguments;
-            Template = "views\\" + arguments[2] + ".xml";
+            this.Template = "views\\whatsnew.xml";
             Start();
         }
         public override void LoadFinished()
@@ -166,7 +176,7 @@ namespace BungaSpotify09.Apps
                         };
                     }
                 case "home":
-                    currentResource = this.Host.MusicService.GetCollection("whatsnew", 0);
+                    currentResource = this.Host.MusicService.GetCollection("whatsnew", "");
                     return new
                     {
                         Home = currentResource

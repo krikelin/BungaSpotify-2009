@@ -27,8 +27,13 @@ namespace BungaSpotify09.Apps
 
         }
         public Playlist Playlist;
-        public user(SpiderHost host, String[] arguments)
-            : base(host, arguments)
+        public user(SpiderHost host)
+            : base(host)
+        {
+           
+
+        }
+        public override void Navigate(string[] arguments)
         {
             String[] parameters = arguments;
             if (parameters.Length > 3)
@@ -52,7 +57,6 @@ namespace BungaSpotify09.Apps
             }
             InitializeComponent();
             Start();
-
         }
         public override void DropItem(IDataObject data)
         {

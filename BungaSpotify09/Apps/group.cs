@@ -24,11 +24,10 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
 
         }
-        public group(SpiderHost host, String[] arguments)
-            : base(host, arguments)
+        public group(SpiderHost host)
+            : base(host)
         {
             InitializeComponent();
-            Start();
         }
         Release release;
         public override object Loading(object arguments)

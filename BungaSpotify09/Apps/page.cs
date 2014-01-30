@@ -25,12 +25,10 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
 
         }
-        public page(SpiderHost host, String[] arguments)
-            : base(host, arguments)
+        public page(SpiderHost host)
+            : base(host)
         {
-            Template = "views\\page.xml";
             InitializeComponent();
-            Start();
         }
         public override string GetName()
         {

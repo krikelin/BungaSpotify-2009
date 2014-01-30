@@ -1,7 +1,7 @@
 ﻿using LuaInterface;
 using Newtonsoft.Json.Linq;
 using Spider;
-using SpiderView.ProtocolBuffer;
+//using SpiderView.ProtocolBuffer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,17 +34,8 @@ namespace BungaSpotify09.Apps
             this.Messages = new Dictionary<string, List<object>>();
 
         }
-        public Protocol Protocol;
-        private System.Net.WebSockets.ClientWebSocket streamWebSocket;
-        public void LoadScheme(String file)
-        {
-            using (StreamReader sr = new StreamReader(file))
-            {
-                Protocol = new Protocol(sr.ReadToEnd());
-                sr.Close();
-            }
-            
-        }
+   //     public Protocol Protocol;
+       
         String folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
         public delegate void lua_send_request(object data);
         public delegate void lua_set_entity(object entity);
@@ -131,7 +122,7 @@ namespace BungaSpotify09.Apps
         }
         private string[] arguments;
         public app(SpiderHost host, String[] arguments)
-            : base(host, arguments)
+            : base(host)
             
         {
             this.arguments = arguments;
@@ -144,10 +135,10 @@ namespace BungaSpotify09.Apps
             // Register the send object
             this.spiderView.Scripting.RegisterFunction("sendRequest", new lua_send_request(luaSendRequest), "");
             this.spiderView.Scripting.RegisterFunction("alax", new lua_alax(alax), "");
-            this.spiderView.Scripting.RegisterFunction("setEntity", (object)this, typeof(app).GetMethod("setEntity"));
-            this.spiderView.Scripting.RegisterFunction("ask", (object)this, typeof(app).GetMethod("ask"));
+          //  this.spiderView.Scripting.RegisterFunction("setEntity", (object)this, typeof(app).GetMethod("setEntity"));
+        //    this.spiderView.Scripting.RegisterFunction("ask", (object)this, typeof(app).GetMethod("ask"));
 
-            Start();
+      //      Start();
             // Load Manifest
             using (StreamReader sr = new StreamReader(folder + "\\Spider\\" + arguments[2] + "\\manifest.json"))
             {

@@ -19,3 +19,6 @@ D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\bin
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.csprojResolveAssemblyReference.cache
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.exe
 D:\Windows.old.000\Users\drsou_000\Documents\GitHub\BungaSpotify-2009\PBTest\obj\Debug\PBTest.pdb
+C:\Users\Alecca\BungaSpotify-2009\PBTest\obj\Debug\PBTest.csprojResolveAssemblyReference.cache
+C:\Users\Alecca\BungaSpotify-2009\PBTest\obj\Debug\PBTest.exe
+C:\Users\Alecca\BungaSpotify-2009\PBTest\obj\Debug\PBTest.pdb

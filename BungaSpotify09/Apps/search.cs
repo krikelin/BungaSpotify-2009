@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -25,11 +26,20 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
 
         }
-        public search(SpiderHost host, String[] arguments)
-            : base(host, arguments)
+        public search(SpiderHost host)
+            : base(host)
+        {
+            InitializeComponent();
+        }
+        public override bool AcceptsUri(string uri)
+        {
+            Regex regex = new Regex("spotify:search:(.*)");
+            return regex.IsMatch(uri);
+        }
+        public override void Navigate(string[] arguments)
         {
             Template = "views\\search.xml";
-            InitializeComponent();
+            Arguments = arguments;
             Start();
         }
         public override string GetName()

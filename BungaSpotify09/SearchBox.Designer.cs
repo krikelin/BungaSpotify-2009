@@ -36,7 +36,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Location = new System.Drawing.Point(32, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 13);
+            this.textBox1.Size = new System.Drawing.Size(177, 14);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -47,6 +47,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::BungaSpotify09.Properties.Resources.searchbox;
             this.Controls.Add(this.textBox1);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SearchBox";
             this.Size = new System.Drawing.Size(239, 21);
             this.Load += new System.EventHandler(this.SearchBox_Load);

@@ -22,8 +22,8 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
             Template = "views\\whatsnew.xml";
         }
-        public whatsnew(SpiderHost host, String[] arguments)
-            : base(host, arguments)
+        public whatsnew(SpiderHost host)
+            : base(host)
         {
             InitializeComponent();
             Start();

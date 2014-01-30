@@ -35,8 +35,13 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="lua51">
-      <HintPath>C:\Windows.old.000\Users\Alexander\Documents\BungaSpotify-2009\BungaSpotify09\bin\Debug\lua51.dll</HintPath>
+    <Reference Include="lua51, Version=0.0.0.0, Culture=neutral, PublicKeyToken=1e1fb15b02227b8a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\lua51.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaInterface, Version=2.0.0.25532, Culture=neutral, PublicKeyToken=1e1fb15b02227b8a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Downloads\LuaInterface.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -99,6 +104,7 @@
     <Compile Include="InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemInsertEventArgs.cs" />
     <Compile Include="NewPlaylist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,7 @@
     <Compile Include="SearchBox.Designer.cs">
       <DependentUpon>SearchBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpotifyService.cs" />
     <EmbeddedResource Include="Apps\artist.resx">
       <DependentUpon>artist.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,12 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\SpiderView\SpiderView\SpiderView.csproj">
-      <Project>{38767d2d-14d8-4744-9a60-779315b279fc}</Project>
-      <Name>SpiderView</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\footer.png" />
@@ -252,6 +253,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpiderView\SpiderView.csproj">
+      <Project>{38767d2d-14d8-4744-9a60-779315b279fc}</Project>
+      <Name>SpiderView</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -64,14 +64,16 @@ namespace BungaSpotify09
 
             SpiderHost = new Spider.SpiderHost(new DummyService());
             SpiderHost.Notify += SpiderHost_Notify;
-            SpiderHost.RegistredAppTypes.Add("group", typeof(Apps.group));
+            /*SpiderHost.RegistredAppTypes.Add("group", typeof(Apps.group));
             SpiderHost.RegistredAppTypes.Add("internal", typeof(Apps.@internal));
             SpiderHost.RegistredAppTypes.Add("playqueue", typeof(Apps.playqueue));
             SpiderHost.RegistredAppTypes.Add("app", typeof(Apps.app));
             SpiderHost.RegistredAppTypes.Add("artist", typeof(Apps.artist));
             SpiderHost.RegistredAppTypes.Add("album", typeof(Apps.album));
             SpiderHost.RegistredAppTypes.Add("search", typeof(Apps.search));
-            SpiderHost.RegistredAppTypes.Add("user", typeof(Apps.user));
+            SpiderHost.RegistredAppTypes.Add("user", typeof(Apps.user));*/
+            SpiderHost.RegisterAppType(new Apps.@internal(SpiderHost));
+            SpiderHost.RegisterAppType(new Apps.search(SpiderHost));
             tmrReload = new System.Windows.Forms.Timer();
             listView = new SPListView(this.Stylesheet, SpiderHost);
             this.Controls.Add(SpiderHost);
@@ -125,7 +127,7 @@ namespace BungaSpotify09
             (this.SpiderHost.Apps["spotify:internal:playqueue"] as Apps.@internal).Start();
         }
 
-        void listView_ItemInserted(object sender, ItemInsertEventArgs e)
+        void listView_ItemInserted(object sender, SPListView.ItemInsertEventArgs e)
         {
             this.SpiderHost.MusicService.insertUserObject(e.Uri.ToString(), e.Position);
         }
@@ -163,7 +165,11 @@ namespace BungaSpotify09
 
         void searchBox_SearchClicked(object sender, EventArgs e)
         {
-            try
+            if (!SpiderHost.Navigate(searchBox.ToString()))
+            {
+                infoBar.ShowMessage("Link could not be found", NotificationType.Warning);
+            }
+           /* try
             {
                 if (searchBox.Text.StartsWith("spotify:"))
                 {
@@ -176,7 +182,8 @@ namespace BungaSpotify09
             }
             catch (Exception ex)
             {
-            }
+            }*/
+            SpiderHost.Navigate(searchBox.Text);
         }
 
         SearchBox searchBox;
@@ -194,15 +201,20 @@ namespace BungaSpotify09
                 }
                 return;
             }
-            Navigate(e.Item.Uri);
+            if (!SpiderHost.Navigate(e.Item.Uri.ToString()))
+            {
+                infoBar.ShowMessage("Link could not be found", NotificationType.Warning);
+            }
         }
 
         public void Navigate(Uri uri)
         {
-            if (uri.ToString().StartsWith("spotify:"))
+
+            if (!SpiderHost.Navigate(uri.ToString()))
             {
-                SpiderHost.Navigate(uri.ToString());
+                infoBar.ShowMessage("Link could not be found", NotificationType.Warning);
             }
+            
             
             foreach (SPListItem item in this.listView.Items)
             {
