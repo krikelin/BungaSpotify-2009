@@ -160,7 +160,6 @@ namespace Spider
         public virtual void Navigate(String[] arguments)
         {
             this.Arguments = arguments;
-            Template = "views\\" + arguments[2] + ".xml";
             Start();
             
         }

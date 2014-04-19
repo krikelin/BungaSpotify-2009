@@ -356,7 +356,7 @@ namespace Spider.Preprocessor
             if(input != null)
             input = a.Replace(input, "");
             #endregion
-
+            if (obj != null)
             this.RuntimeMachine.SetVariable("data", obj);
 
             /**

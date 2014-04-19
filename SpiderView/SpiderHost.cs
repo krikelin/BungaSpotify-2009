@@ -73,7 +73,7 @@ namespace Spider
             }
         }
 
-#if(false)
+#if(true)
         public App LoadApp(String uri)
         {
             String[] segments = uri.Split(':');
@@ -107,14 +107,8 @@ namespace Spider
             Future.Clear();
             return appClass;
         }
-        public List<App> RegistredAppTypes
-        {
-            get
-            {
-                return registredAppTypes;
-            }
-        }
-        public void Navigate(String uri)
+        
+        public bool Navigate(String uri)
         {
             try
             {
@@ -140,7 +134,7 @@ namespace Spider
                         if (a != app)
                             a.Hide();
                     }
-                    return;
+                    return true;
                 }
                 Type type = RegistredAppTypes[ns];
                 App appClass = (App)type.GetConstructor(new Type[] { typeof(SpiderHost), typeof(String[]) }).Invoke(new Object[] { this, uri.Split(':') });
@@ -160,6 +154,7 @@ namespace Spider
                 if (this.Navigated != null)
                     this.Navigated(this, new SpiderNavigationEventArgs() { Arguments = arguments });
                 Future.Clear();
+                return true;
 
             }
             catch (Exception e)
@@ -167,9 +162,11 @@ namespace Spider
                 if (this.Notify != null)
                 {
                     this.Notify(this, new NotificationEventArgs() { Text = "An error occured loading the app",  Type = NotificationType.Error });
+                    return false;
 
                 }
             }
+            return false;
 
 
         }
@@ -208,7 +205,7 @@ namespace Spider
        
         
         public event SpiderAppEvent AppStarted;
-
+#if(false)
         public bool Navigate(string uri)
         {
             foreach (App app in registredAppTypes)
@@ -221,7 +218,8 @@ namespace Spider
                 }
             }
             return false;
-        }
+        }*/
+#endif
 
         /// <summary>
         /// Loads an spider app into the host

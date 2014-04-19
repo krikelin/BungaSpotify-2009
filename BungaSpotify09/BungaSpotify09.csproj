@@ -125,7 +125,6 @@
     <Compile Include="SearchBox.Designer.cs">
       <DependentUpon>SearchBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpotifyService.cs" />
     <EmbeddedResource Include="Apps\artist.resx">
       <DependentUpon>artist.cs</DependentUpon>
     </EmbeddedResource>

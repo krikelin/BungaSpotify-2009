@@ -64,16 +64,14 @@ namespace BungaSpotify09
 
             SpiderHost = new Spider.SpiderHost(new DummyService());
             SpiderHost.Notify += SpiderHost_Notify;
-            /*SpiderHost.RegistredAppTypes.Add("group", typeof(Apps.group));
+            SpiderHost.RegistredAppTypes.Add("group", typeof(Apps.group));
             SpiderHost.RegistredAppTypes.Add("internal", typeof(Apps.@internal));
             SpiderHost.RegistredAppTypes.Add("playqueue", typeof(Apps.playqueue));
             SpiderHost.RegistredAppTypes.Add("app", typeof(Apps.app));
             SpiderHost.RegistredAppTypes.Add("artist", typeof(Apps.artist));
             SpiderHost.RegistredAppTypes.Add("album", typeof(Apps.album));
             SpiderHost.RegistredAppTypes.Add("search", typeof(Apps.search));
-            SpiderHost.RegistredAppTypes.Add("user", typeof(Apps.user));*/
-            SpiderHost.RegisterAppType(new Apps.@internal(SpiderHost));
-            SpiderHost.RegisterAppType(new Apps.search(SpiderHost));
+            SpiderHost.RegistredAppTypes.Add("user", typeof(Apps.user));
             tmrReload = new System.Windows.Forms.Timer();
             listView = new SPListView(this.Stylesheet, SpiderHost);
             this.Controls.Add(SpiderHost);

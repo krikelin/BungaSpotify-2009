@@ -28,7 +28,7 @@ namespace BungaSpotify09.Apps
             Regex regex = new Regex(uri);
             return regex.IsMatch("spotify:internal:home");
         }
-        public @internal(SpiderHost host)
+        public @internal(SpiderHost host, String[] arguments)
             : base(host)
         {
             InitializeComponent();

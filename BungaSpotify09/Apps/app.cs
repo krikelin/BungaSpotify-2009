@@ -127,7 +127,7 @@ namespace BungaSpotify09.Apps
         {
             this.arguments = arguments;
             InitializeComponent();
-            this.Template = (folder + "\\Spider\\" + arguments[2] + "\\view.xml");
+            this.Template = (folder + "\\Spotify\\" + arguments[2] + "\\index.xml");
           //  LoadScheme(folder + "\\spider\\" + arguments[0] + "\\view.proto");
 
 
@@ -140,7 +140,7 @@ namespace BungaSpotify09.Apps
 
       //      Start();
             // Load Manifest
-            using (StreamReader sr = new StreamReader(folder + "\\Spider\\" + arguments[2] + "\\manifest.json"))
+            using (StreamReader sr = new StreamReader(folder + "\\Spotify\\" + arguments[2] + "\\manifest.json"))
             {
                 String data = sr.ReadToEnd();
 
@@ -191,6 +191,7 @@ namespace BungaSpotify09.Apps
         public override void Navigate(string[] arguments)
         {
             base.Navigate(arguments);
+            
             
         }
         private void artist_Load(object sender, EventArgs e)

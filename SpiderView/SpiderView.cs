@@ -303,7 +303,8 @@ namespace Spider
 
         void childBoard_ScriptCalled(object sender, Board.ScriptInvokeEventArgs e)
         {
-            Scripting.InvokeFunction(e.Command, e);
+            object c = Scripting.InvokeFunction(e.Command, e);
+            this.Refresh(null);
         }
         public class NavigateEventArgs
         {
