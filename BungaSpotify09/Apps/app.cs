@@ -136,7 +136,7 @@ namespace BungaSpotify09.Apps
             this.spiderView.Scripting.RegisterFunction("sendRequest", new lua_send_request(luaSendRequest), "");
             this.spiderView.Scripting.RegisterFunction("alax", new lua_alax(alax), "");
           //  this.spiderView.Scripting.RegisterFunction("setEntity", (object)this, typeof(app).GetMethod("setEntity"));
-        //    this.spiderView.Scripting.RegisterFunction("ask", (object)this, typeof(app).GetMethod("ask"));
+            this.spiderView.Scripting.RegisterFunction("ask", typeof(app).GetMethod("ask"), (object)this);
 
       //      Start();
             // Load Manifest
