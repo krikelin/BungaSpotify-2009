@@ -121,8 +121,8 @@ namespace BungaSpotify09.Apps
            
         }
         private string[] arguments;
-        public app(SpiderHost host, String[] arguments)
-            : base(host)
+        public app(SpiderHost host, String[] arguments, String[] uri)
+            : base(host, uri)
             
         {
             this.arguments = arguments;

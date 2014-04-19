@@ -234,8 +234,8 @@ namespace Spider
             this.SelectedBlock = (Block)parent.SelectedBlock.Clone();
             this.Uri = new Uri(uri);
             this.Children = new List<SPListItem>();
-          //  this.AppInstance = this.Parent.Host.LoadApp(uri.ToString());
-          //  AppInstance.Loaded += instance_Loaded;
+            this.AppInstance = this.Parent.Host.LoadApp(uri.ToString());
+            AppInstance.Loaded += instance_Loaded;
             this.DividerBlock = (Block)parent.stylesheet.Blocks["hr"].Clone();
             this.SubBlock = parent.stylesheet.Blocks["::sub"];
             this.Text = "Loading..";

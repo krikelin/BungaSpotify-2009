@@ -24,9 +24,10 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
            
         }
-        public artist(SpiderHost host)
-            : base(host)
+        public artist(SpiderHost host, String[] uri)
+            : base(host, uri)
         {
+            this.Template = "Views\\artist.xml";
         }
         public override string GetName()
         {

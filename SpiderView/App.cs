@@ -22,8 +22,9 @@ namespace Spider
         public SpiderHost Host { get; set; }
         public String Template { get; set; }
         public String[] Arguments;
-        public App(SpiderHost host)
+        public App(SpiderHost host, String[] arguments)
         {
+            this.Arguments = arguments;
             
             InitializeComponent();
             this.Host = host;
@@ -73,6 +74,8 @@ namespace Spider
         }
         void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (Template == null)
+                return;
             spiderView.LoadFile(Template);
             spiderView.refresh(e.Result);
             if(this.Loaded != null)
@@ -80,7 +83,6 @@ namespace Spider
             LoadFinished();
             if (error)
             {
-                throw new Exception();
             }
         }
         bool error = false;

@@ -80,13 +80,9 @@ namespace BungaSpotify09
 
             listView.ItemInserted += listView_ItemInserted;
             listView.AddItem(new Uri("spotify:internal:home"), true);
-            listView.AddItem(new Uri("spotify:internal:toplist"), true);
-            listView.AddItem(new Uri("spotify:internal:playqueue#queue"), true);
-            listView.AddItem(new Uri("spotify:internal:own"), true);
-            listView.AddItem("-", new Uri("spotify:internal:toplist"), true);
-            listView.AddItem(new Uri("spotify:internal:add_playlist"), true);
+            listView.AddItem("-", new Uri("spotify:internal:placeholder"), true);
             listView.ItemSelected += listView_ItemSelected;
-            this.SpiderHost.MusicService.ObjectsDelivered += MusicService_ObjectsDelivered;
+            // this.SpiderHost.MusicService.ObjectsDelivered += MusicService_ObjectsDelivered;
             listView.ItemReordered += listView_ItemReordered;
             listView.Dock = DockStyle.Left;
             listView.Width = 270;
@@ -146,7 +142,7 @@ namespace BungaSpotify09
         infobar infoBar;
         void SpiderHost_Notify(object sender, NotificationEventArgs e)
         {
-            this.infoBar.ShowMessage(e.Text, e.Type);
+        //    this.infoBar.ShowMessage(e.Text, e.Type);
         }
 
         void listView_ItemReordered(object sender, SPListView.ItemReorderEventArgs e)

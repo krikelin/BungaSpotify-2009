@@ -521,7 +521,7 @@ namespace Spider
             {
                 foreach (Element elm in this.Children)
                 {
-                    if ((x > elm.X && x < elm.X + elm.Width) && (y > elm.Y && y < elm.Y + elm.Height))
+                    if (elm.GetType() == typeof(hbox) || ((x > elm.X && x < elm.X + elm.Width) && (y > elm.Y && y < elm.Y + elm.Height)))
                     {
                         elm.CheckClick(e.X, e.Y);
                     }
@@ -595,11 +595,11 @@ namespace Spider
             int y = e.Y;
             foreach (Element elm in Children)
             {
-                if ((x > elm.AbsoluteLeft && x < elm.AbsoluteLeft + elm.AbsoluteWidth) && (y > elm.AbsoluteTop && y < elm.AbsoluteTop + elm.AbsoluteHeight))
+                if ( ((x > elm.X && x < elm.X + elm.Width) && (y > elm.Y && y < elm.Y + elm.Height)))
                 {
                     elm.CheckHover(x, y);
                 }
-                else
+               else
                 {
                 }
             }
@@ -746,8 +746,10 @@ namespace Spider
             }
             PackChildren();
         }
+
         private void Board_Load(object sender, EventArgs e)
         {
+            this.DoubleBuffered = true;
             this.CreateGraphics().PageUnit = GraphicsUnit.Pixel;
         }
         public class DrawBuffer

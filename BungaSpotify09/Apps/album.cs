@@ -24,8 +24,8 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
 
         }
-        public album(SpiderHost host)
-            : base(host)
+        public album(SpiderHost host, String[] uri)
+            : base(host, uri)
         {
             InitializeComponent();
             Start();

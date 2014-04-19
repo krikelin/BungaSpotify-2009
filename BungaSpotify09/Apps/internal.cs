@@ -29,7 +29,7 @@ namespace BungaSpotify09.Apps
             return regex.IsMatch("spotify:internal:home");
         }
         public @internal(SpiderHost host, String[] arguments)
-            : base(host)
+            : base(host, arguments)
         {
             InitializeComponent();
            
@@ -42,7 +42,7 @@ namespace BungaSpotify09.Apps
         }
         public override void LoadFinished()
         {
-            switch ((string)((string[])Arguments)[2])
+            switch ((string)((string[])Arguments)[0])
             {
                 case "home":
                     {
@@ -186,7 +186,7 @@ namespace BungaSpotify09.Apps
         }
         public override SPListItem.ListIcon GetIcon()
         {
-            switch (Arguments[2])
+            switch (Arguments[0])
             {
                 case "add_playlist":
                     return new SPListItem.ListIcon()
@@ -223,7 +223,8 @@ namespace BungaSpotify09.Apps
         }
         public override string GetName()
         {
-            switch(Arguments[2]) {
+            String argument = Arguments.Length > 1 ? Arguments[1] : Arguments[0];
+            switch(argument) {
                 case "add_playlist":
                     return "New Playlist";
                 case "home":

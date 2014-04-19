@@ -26,8 +26,8 @@ namespace BungaSpotify09.Apps
             this.ResumeLayout(false);
 
         }
-        public search(SpiderHost host)
-            : base(host)
+        public search(SpiderHost host, String[] uri)
+            : base(host, uri)
         {
             InitializeComponent();
         }

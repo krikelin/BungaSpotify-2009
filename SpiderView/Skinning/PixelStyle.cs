@@ -119,8 +119,8 @@ namespace Spider.Skinning
           //  g.DrawString(text, font, new SolidBrush(Color.FromArgb(127, Color.Black)), new Rectangle(pos.X, pos.Y -1 , pos.Width, pos.Height));
             BufferedGraphicsContext bgc = new BufferedGraphicsContext();
 
-    //        TextRenderer.DrawText(g, text, font, new Rectangle(pos.Left, pos.Top, pos.Width, pos.Height), brush.Color, Color.Transparent, TextFormatFlags.Left | TextFormatFlags.WordBreak);
-            g.DrawString( text, font, brush, pos);
+       //    TextRenderer.DrawText(g, text, font, new Rectangle(pos.Left, pos.Top, pos.Width, pos.Height), brush.Color, Color.Transparent, TextFormatFlags.Left | TextFormatFlags.WordBreak);
+             g.DrawString( text, font, brush, pos);
             //g.DrawString(text, font, brush, pos);
         }
         public Size MeasureString(string text, Font font)

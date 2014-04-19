@@ -27,8 +27,8 @@ namespace BungaSpotify09.Apps
 
         }
         public Playlist Playlist;
-        public user(SpiderHost host)
-            : base(host)
+        public user(SpiderHost host, String[] uri)
+            : base(host, uri)
         {
            
 
@@ -184,7 +184,7 @@ namespace BungaSpotify09.Apps
         }
         public override string GetName()
         {
-            return this.Playlist.Name;
+            return this.Playlist != null ? this.Playlist.Name : "";
         }
         public override Spider.SPListItem.ListIcon GetIcon()
         {

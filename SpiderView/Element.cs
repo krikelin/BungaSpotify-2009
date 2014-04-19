@@ -1288,7 +1288,7 @@ namespace Spider
                         ((track)track).Parent = this;
                         track.X = 0;
                         track.Y = i * trackHeight;
-                        if (i % 2 == 0)
+                        if (i % 2 == 1)
                         {
                             track.Block = this.Stylesheet.Blocks["track::even"];
                         }
@@ -1882,6 +1882,7 @@ namespace Spider
                 child.X = left;
                 child.PackChildren();
                 left += child.Width + Padding.Left;
+                this.Width = left;
             }
         }
     }

@@ -44,7 +44,7 @@ end
 			</text>
 			
 			<text fontsize="24" fgcolor="#aaeeff">Recent releases</text>
-			<flow width="30">
+			<flow width="100%">
 				% for i, album in enum(data.Home.Albums) do
 				<img src="${album.Image}" uri="${album.uri}" />
 				% if i % 3 == 0 then
